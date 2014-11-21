@@ -27,6 +27,10 @@
     NSLog(@"dropoffBarView frame: %@", NSStringFromCGRect(self.dropoffBarView.frame) );
     
     UITapGestureRecognizer *tapDropoffBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRight:)];
+    UITapGestureRecognizer *tapPickupBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLeft:)];
+    
+    [self.dropoffBarView addGestureRecognizer:tapDropoffBarView];
+    [self.pickupBarView addGestureRecognizer:tapPickupBarView];
     
 }
 
@@ -43,6 +47,18 @@
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          self.dropoffBarView.transform = CGAffineTransformMakeTranslation(-50.0, 0);
+                     }
+                     completion:nil
+     ];
+}
+
+- (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
+{
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.pickupBarView.transform = CGAffineTransformMakeTranslation(50.0, 0);
                      }
                      completion:nil
      ];
