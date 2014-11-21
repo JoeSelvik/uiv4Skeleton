@@ -66,9 +66,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="mapVC" id="zTr-Sg-Ev3"/>
                     <connections>
-                        <outlet property="locationBarView" destination="A1l-e4-vGD" id="B9S-3l-3Fc"/>
-                        <outlet property="locationButton" destination="uXV-ht-DSe" id="hZ5-0v-Mb7"/>
-                        <outlet property="pickupBarView" destination="sEX-Fs-ZyP" id="tGx-fw-Gbx"/>
+                        <outlet property="dropoffBarView" destination="Ntd-Ti-SHm" id="kpX-Y5-kUK"/>
+                        <outlet property="locationBarView" destination="A1l-e4-vGD" id="fAI-hT-xQ3"/>
+                        <outlet property="locationButton" destination="uXV-ht-DSe" id="D9c-Mk-bhz"/>
+                        <outlet property="pickupBarView" destination="sEX-Fs-ZyP" id="5Gg-8r-RUO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
