@@ -42,11 +42,16 @@
 
 - (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
 {
+    CGFloat screenWidth = self.locationBarView.frame.size.width;
+    CGFloat pickupBarViewWidth = screenWidth * 0.25;
+    CGFloat dropoffBarViewWidth = screenWidth * 0.75;
+    
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         self.dropoffBarView.transform = CGAffineTransformMakeTranslation(-50.0, 0);
+                         self.pickupBarView.frame = CGRectMake(0, 0, pickupBarViewWidth, 80);
+                         self.dropoffBarView.frame = CGRectMake(pickupBarViewWidth, 0, dropoffBarViewWidth, 80);
                      }
                      completion:nil
      ];
@@ -54,11 +59,16 @@
 
 - (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
 {
+    CGFloat screenWidth = self.locationBarView.frame.size.width;
+    CGFloat pickupBarViewWidth = screenWidth * 0.75;
+    CGFloat dropoffBarViewWidth = screenWidth * 0.25;
+    
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         self.pickupBarView.transform = CGAffineTransformMakeTranslation(50.0, 0);
+                         self.pickupBarView.frame = CGRectMake(0, 0, pickupBarViewWidth, 80);
+                         self.dropoffBarView.frame = CGRectMake(pickupBarViewWidth, 0, dropoffBarViewWidth, 80);
                      }
                      completion:nil
      ];
