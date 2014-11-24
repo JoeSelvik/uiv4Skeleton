@@ -120,6 +120,7 @@
                     <connections>
                         <outlet property="dropoffBarLabel" destination="6ps-wb-f2d" id="gGA-hv-hAs"/>
                         <outlet property="dropoffBarView" destination="Ntd-Ti-SHm" id="kpX-Y5-kUK"/>
+                        <outlet property="locationBarSlideConstraint" destination="9qh-sM-eTB" id="G6Q-PJ-n7h"/>
                         <outlet property="locationBarView" destination="A1l-e4-vGD" id="fAI-hT-xQ3"/>
                         <outlet property="locationButton" destination="uXV-ht-DSe" id="D9c-Mk-bhz"/>
                         <outlet property="pickupBarLabel" destination="GvY-TJ-N66" id="vfd-qp-hY1"/>
