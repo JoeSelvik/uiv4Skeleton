@@ -39,8 +39,8 @@
     [self.dropoffBarView addGestureRecognizer:tapDropoffBarView];
     [self.pickupBarView addGestureRecognizer:tapPickupBarView];
     
-    self.pickupBarLabel.contentMode = UIViewContentModeScaleAspectFill;
-    self.dropoffBarLabel.contentMode = UIViewContentModeScaleAspectFill;
+    self.pickupBarLabel.contentMode = UIViewContentModeScaleToFill;
+    self.dropoffBarLabel.contentMode = UIViewContentModeScaleToFill;
     
     self.pickupBarSelected = YES;
     
@@ -56,9 +56,9 @@
 {
     if (self.pickupBarSelected) {
         
-        [self.pickupBarLabel removeConstraint:self.locationBarSlideConstraint];
-        
-        self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarLabel
+        // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
+        [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
+        self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
                                                                        attribute:NSLayoutAttributeTrailing
                                                                        relatedBy:NSLayoutRelationEqual
                                                                           toItem:self.locationBarView
@@ -66,89 +66,48 @@
                                                                       multiplier:0.8
                                                                         constant:0.0
                                            ];
-        
-        [self.pickupBarLabel addConstraint:self.locationBarSlideConstraint];
-        
-        
-//        CGFloat screenWidth = self.locationBarView.frame.size.width;
-//        CGFloat pickupBarViewWidth = screenWidth * 0.40;
-//        CGFloat dropoffBarViewWidth = screenWidth * 0.60;
-//        
-//        CGRect newPickupBarLabelFrame = self.dropoffBarLabel.frame;
-//        CGRect newDropoffBarLabelFrame = self.pickupBarLabel.frame;
-//        NSLog(@"pre - pickupBarLabel frame: %@", NSStringFromCGRect(self.pickupBarLabel.frame));
-//        NSLog(@"pre - dropoffBarLabel frame: %@", NSStringFromCGRect(self.dropoffBarLabel.frame));
-//        NSLog(@"pre - pickupBarView frame: %@", NSStringFromCGRect(self.pickupBarView.frame));
-//        NSLog(@"pre - dropoffBarView frame: %@", NSStringFromCGRect(self.dropoffBarView.frame));
+        [self.locationBarView addConstraint:self.locationBarSlideConstraint];
         
         [UIView animateWithDuration:0.5
                               delay:0.0
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
-                             [self.pickupBarLabel layoutIfNeeded];
-//                             self.pickupBarLabel.frame = newPickupBarLabelFrame;
-//                             self.dropoffBarLabel.frame = newDropoffBarLabelFrame;
-//                             
-//                             self.pickupBarView.frame = CGRectMake(0, 0, pickupBarViewWidth, 80);
-//                             self.dropoffBarView.frame = CGRectMake(pickupBarViewWidth, 0, dropoffBarViewWidth, 80);
-//                             
-//                             [self.locationBarView layoutSubviews];
+                             [self.locationBarView layoutIfNeeded];
                          }
-                         completion:^(BOOL finished){
-//                             NSLog(@"post - pickupBarLabel frame: %@", NSStringFromCGRect(self.pickupBarLabel.frame));
-//                             NSLog(@"post - dropoffBarLabel frame: %@", NSStringFromCGRect(self.dropoffBarLabel.frame));
-//                             NSLog(@"post - pickupBarView frame: %@", NSStringFromCGRect(self.pickupBarView.frame));
-//                             NSLog(@"post - dropoffBarView frame: %@", NSStringFromCGRect(self.dropoffBarView.frame));
-                         }
+                         completion:nil
          ];
         
         self.pickupBarSelected = NO;
     }
-    
 }
 
 - (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
 {
     if (!self.pickupBarSelected) {
         
-        
-        
-//        CGFloat screenWidth = self.locationBarView.frame.size.width;
-//        CGFloat pickupBarViewWidth = screenWidth * 0.60;
-//        CGFloat dropoffBarViewWidth = screenWidth * 0.40;
-//        
-//        CGRect newPickupBarLabelFrame = self.dropoffBarLabel.frame;
-//        CGRect newDropoffBarLabelFrame = self.pickupBarLabel.frame;
-//        NSLog(@"pre - pickupBarLabel frame: %@", NSStringFromCGRect(self.pickupBarLabel.frame));
-//        NSLog(@"pre - dropoffBarLabel frame: %@", NSStringFromCGRect(self.dropoffBarLabel.frame));
-//        NSLog(@"pre - pickupBarView frame: %@", NSStringFromCGRect(self.pickupBarView.frame));
-//        NSLog(@"pre - dropoffBarView frame: %@", NSStringFromCGRect(self.dropoffBarView.frame));
-        
+        // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
+        [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
+        self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
+                                                                       attribute:NSLayoutAttributeTrailing
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.locationBarView
+                                                                       attribute:NSLayoutAttributeCenterX
+                                                                      multiplier:1.2
+                                                                        constant:0.0
+                                           ];
+        [self.locationBarView addConstraint:self.locationBarSlideConstraint];
+
         [UIView animateWithDuration:0.5
                               delay:0.0
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
-                             
-                             
-//                             self.pickupBarLabel.frame = newPickupBarLabelFrame;
-//                             self.dropoffBarLabel.frame = newDropoffBarLabelFrame;
-//                             
-//                             self.pickupBarView.frame = CGRectMake(0, 0, pickupBarViewWidth, 80);
-//                             self.dropoffBarView.frame = CGRectMake(pickupBarViewWidth, 0, dropoffBarViewWidth, 80);
-//                             
-//                             [self.locationBarView layoutSubviews];
+                             [self.locationBarView layoutIfNeeded];
                          }
-                         completion:^(BOOL finished){
-//                             NSLog(@"post - pickupBarLabel frame: %@", NSStringFromCGRect(self.pickupBarLabel.frame));
-//                             NSLog(@"post - dropoffBarLabel frame: %@", NSStringFromCGRect(self.dropoffBarLabel.frame));
-//                             NSLog(@"post - pickupBarView frame: %@", NSStringFromCGRect(self.pickupBarView.frame));
-//                             NSLog(@"post - dropoffBarView frame: %@", NSStringFromCGRect(self.dropoffBarView.frame));
-                         }
+                         completion:nil
          ];
         
         self.pickupBarSelected = YES;
     }
-    
 }
 
 @end
