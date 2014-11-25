@@ -39,9 +39,11 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // Set the initial state.
     self.state = TNTMapViewControllerStateDragForPickup;
     [self didUpdateState];
     
+    // Setup the locationBar with correct gesture recognizers
     UITapGestureRecognizer *tapDropoffBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRight:)];
     UITapGestureRecognizer *tapPickupBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLeft:)];
     
@@ -64,7 +66,30 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 
 - (void)didUpdateState
 {
-    
+    switch (self.state) {
+        case TNTMapViewControllerStateDragForPickup: {
+            self.locationButton.enabled = NO;
+            [self.locationButton setTitle:@"Pickup Location" forState:UIControlStateNormal];
+            
+            break;
+        }
+            
+        case TNTMapViewControllerStateDraggedForPickup: {
+            break;
+        }
+        
+        case TNTMapViewControllerStateDragForDropoff: {
+            break;
+        }
+        
+        case TNTMapViewControllerStateDraggedForDropoff: {
+            break;
+        }
+        
+        case TNTMapViewControllerStateActiveReservation: {
+            break;
+        }
+    }
 }
 
 - (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
