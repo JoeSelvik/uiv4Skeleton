@@ -39,8 +39,8 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // Set the initial state.
-    self.state = TNTMapViewControllerStateDragForPickup;
+    // Set the initial state. In this demo skip the drag state.
+    self.state = TNTMapViewControllerStateDraggedForPickup;
     [self didUpdateState];
     
     // Setup the locationBar with correct gesture recognizers
@@ -67,22 +67,28 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 - (void)didUpdateState
 {
     switch (self.state) {
+        // Initiallized when map gets dragged. Not for this shell.
         case TNTMapViewControllerStateDragForPickup: {
             self.locationButton.enabled = NO;
             [self.locationButton setTitle:@"Pickup Location" forState:UIControlStateNormal];
-            
             break;
         }
             
         case TNTMapViewControllerStateDraggedForPickup: {
+            self.locationButton.enabled = YES;
+            [self.locationButton setTitle:@"Pickup Location" forState:UIControlStateNormal];
             break;
         }
         
         case TNTMapViewControllerStateDragForDropoff: {
+            self.locationButton.enabled = NO;
+            [self.locationButton setTitle:@"Dropoff Location" forState:UIControlStateNormal];
             break;
         }
         
         case TNTMapViewControllerStateDraggedForDropoff: {
+            self.locationButton.enabled = YES;
+            [self.locationButton setTitle:@"Dropoff Location" forState:UIControlStateNormal];
             break;
         }
         
@@ -108,6 +114,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                                            ];
         [self.locationBarView addConstraint:self.locationBarSlideConstraint];
         
+        // Animate the location bar.
         [UIView animateWithDuration:0.5
                               delay:0.0
                             options:UIViewAnimationOptionCurveLinear
@@ -117,7 +124,11 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                          completion:nil
          ];
         
-        self.locationButton.titleLabel
+        // Update the state.
+        self.state = TNTMapViewControllerStateDraggedForDropoff;
+        [self didUpdateState];
+        
+        // Protects against double taps.
         self.pickupBarSelected = NO;
     }
 }
@@ -138,6 +149,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                                            ];
         [self.locationBarView addConstraint:self.locationBarSlideConstraint];
 
+        // Animate the location bar.
         [UIView animateWithDuration:0.5
                               delay:0.0
                             options:UIViewAnimationOptionCurveLinear
@@ -147,6 +159,11 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                          completion:nil
          ];
         
+        // Update the state.
+        self.state = TNTMapViewControllerStateDraggedForPickup;
+        [self didUpdateState];
+        
+        // Protects against double taps.
         self.pickupBarSelected = YES;
     }
 }
