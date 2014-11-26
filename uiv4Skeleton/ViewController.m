@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 @property (nonatomic, assign) BOOL pickupBarSelected;
 
 - (void)didUpdateState;
+- (IBAction)tappedLocationButton:(id)sender;
 
 @end
 
@@ -98,10 +99,27 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     }
 }
 
+- (IBAction)tappedLocationButton:(id)sender
+{
+    if (self.state == TNTMapViewControllerStateDraggedForPickup) {
+        [self animateToDragForDropoffState];
+    } else if (self.state == TNTMapViewControllerStateDraggedForDropoff) {
+        // Send to TNTMapViewControllerStateActiveReservation
+    } else {
+        // Should not be possible!
+    }
+}
+
+// Put any functionality here that needs the tapRecognizer
 - (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
 {
+    [self animateToDragForDropoffState];
+}
+
+// There are multiple ways to change state though
+- (void)animateToDragForDropoffState
+{
     if (self.pickupBarSelected) {
-        
         // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
         [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
         self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
@@ -133,10 +151,18 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     }
 }
 
+
+// Put any functionality here that needs the tapRecognizer
 - (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
 {
+    [self animateToDragForPickupState];
+}
+
+
+// Put any functionality here that needs the tapRecognizer
+- (void)animateToDragForPickupState
+{
     if (!self.pickupBarSelected) {
-        
         // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
         [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
         self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
@@ -148,7 +174,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                                                                         constant:0.0
                                            ];
         [self.locationBarView addConstraint:self.locationBarSlideConstraint];
-
+        
         // Animate the location bar.
         [UIView animateWithDuration:0.5
                               delay:0.0
