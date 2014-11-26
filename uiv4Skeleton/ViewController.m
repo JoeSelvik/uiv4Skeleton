@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     TNTMapViewControllerStateDraggedForPickup,
     TNTMapViewControllerStateDragForDropoff,
     TNTMapViewControllerStateDraggedForDropoff,
-    TNTMapViewControllerStateActiveReservation
+    TNTMapViewControllerStateContactingDispatch
 };
 
 @interface ViewController ()
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
             break;
         }
         
-        case TNTMapViewControllerStateActiveReservation: {
+        case TNTMapViewControllerStateContactingDispatch: {
             break;
         }
     }
@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     if (self.state == TNTMapViewControllerStateDraggedForPickup) {
         [self animateToDragForDropoffState];
     } else if (self.state == TNTMapViewControllerStateDraggedForDropoff) {
-        // Send to TNTMapViewControllerStateActiveReservation
+        [self animateToContactingDispatchState];
     } else {
         // Should not be possible!
     }
@@ -192,6 +192,24 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
         // Protects against double taps.
         self.pickupBarSelected = YES;
     }
+}
+
+
+- (void)animateToContactingDispatchState
+{
+    // Animate the locationBar away!
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         [self.locationBarView removeFromSuperview];
+                     }
+                     completion:nil
+     ];
+    
+    // Update the state.
+    self.state = TNTMapViewControllerStateContactingDispatch;
+    [self didUpdateState];
 }
 
 @end
