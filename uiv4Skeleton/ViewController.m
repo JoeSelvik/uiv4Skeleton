@@ -207,6 +207,10 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                      completion:nil
      ];
     
+    // Recreate the location bar at the top of the screen
+    YourViewControllerClass *viewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    
     // Update the state.
     self.state = TNTMapViewControllerStateContactingDispatch;
     [self didUpdateState];
