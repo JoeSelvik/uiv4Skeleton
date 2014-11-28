@@ -236,7 +236,13 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
                                                          multiplier:1.0
                                                            constant:0.0]];
     
-    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:1.0
+                                                           constant:80]];
     
     
     
