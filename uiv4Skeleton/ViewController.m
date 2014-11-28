@@ -212,10 +212,13 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     
     [self.view addSubview:self.locationBarView];
     
+    // TODO - is it possible to only remove the constaints that change and save some resources?
+    //[self.locationBarView removeConstraints:self.locationBarView.constraints];
+    
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
                                                           attribute:NSLayoutAttributeLeading
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
+                                                             toItem:self.locationBarView.superview
                                                           attribute:NSLayoutAttributeLeading
                                                          multiplier:1.0
                                                            constant:0.0]];
@@ -223,30 +226,30 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
                                                           attribute:NSLayoutAttributeTop
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
+                                                             toItem:self.topLayoutGuide
                                                           attribute:NSLayoutAttributeLeading
                                                          multiplier:1.0
-                                                           constant:0.0]];
+                                                           constant:self.navigationController.view.frame.size.height]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
                                                           attribute:NSLayoutAttributeTrailing
                                                           relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
+                                                             toItem:self.locationBarView.superview
                                                           attribute:NSLayoutAttributeTrailing
                                                          multiplier:1.0
                                                            constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
-                                                          attribute:NSLayoutAttributeHeight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeHeight
-                                                         multiplier:1.0
-                                                           constant:80]];
+//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationBarView
+//                                                          attribute:NSLayoutAttributeHeight
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:self.locationBarView.superview
+//                                                          attribute:NSLayoutAttributeHeight
+//                                                         multiplier:1.0
+//                                                           constant:80]];
     
     
     
-    
+//    [self.locationBarView layoutIfNeeded];
     
     
     // Update the state.
