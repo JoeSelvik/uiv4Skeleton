@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="458" y="2020"/>
         </scene>
-        <!--View Controller-->
+        <!--LocationBarVC-->
         <scene sceneID="Exu-Gi-1TE">
             <objects>
-                <viewController id="vlb-p9-utU" sceneMemberID="viewController">
+                <viewController id="vlb-p9-utU" userLabel="LocationBarVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXO-CZ-XcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="spQ-fP-7I3"/>
@@ -198,28 +198,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyu-ox-6YH" userLabel="pickupBarView">
-                                <rect key="frame" x="21" y="12" width="208" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyu-ox-6YH" userLabel="pickupBarView">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
                                 <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmy-TR-tbO" userLabel="dropoffBarView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pll-pe-4fe" userLabel="dropoffBarView">
+                                <rect key="frame" x="360" y="0.0" width="240" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pll-pe-4fe" firstAttribute="leading" secondItem="kyu-ox-6YH" secondAttribute="trailing" id="Dp4-FC-VWG"/>
                             <constraint firstItem="kyu-ox-6YH" firstAttribute="trailing" secondItem="I6C-b4-dZP" secondAttribute="centerXWithinMargins" multiplier="1.2" id="Jp5-Fg-EHa"/>
                             <constraint firstItem="kyu-ox-6YH" firstAttribute="top" secondItem="I6C-b4-dZP" secondAttribute="top" id="M2Y-th-eeu"/>
                             <constraint firstItem="kyu-ox-6YH" firstAttribute="leading" secondItem="I6C-b4-dZP" secondAttribute="leading" id="Q3o-Ej-0uf"/>
+                            <constraint firstAttribute="trailing" secondItem="pll-pe-4fe" secondAttribute="trailing" id="QoZ-nJ-Ic4"/>
+                            <constraint firstItem="pll-pe-4fe" firstAttribute="top" secondItem="fXO-CZ-XcJ" secondAttribute="top" id="YIV-5i-FUt"/>
                             <constraint firstItem="spQ-fP-7I3" firstAttribute="top" secondItem="kyu-ox-6YH" secondAttribute="bottom" id="nuP-WU-E9C"/>
+                            <constraint firstItem="spQ-fP-7I3" firstAttribute="top" secondItem="pll-pe-4fe" secondAttribute="bottom" id="wWz-Qo-A3Q"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="80"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXz-RS-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1279" y="2170"/>
+        </scene>
+        <!--LocationButtonVC-->
+        <scene sceneID="NR5-J1-VR8">
+            <objects>
+                <viewController id="CoO-5L-CPM" userLabel="LocationButtonVC" sceneMemberID="viewController">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xkk-Sd-lxZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.47843137250000001" green="0.066666666669999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="100"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uB3-Xj-IWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279" y="2412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="itZ-hF-RPD">
