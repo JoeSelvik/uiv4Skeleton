@@ -39,7 +39,33 @@
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationBarViewController *locationBarVC = [main instantiateViewControllerWithIdentifier:@"locationBarVC"];
     
-    [self.bottomContainer addSubview:locationBarVC.view];
+    UIView *box = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    
+    [self.bottomContainer addSubview:box];
+    
+//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
+//                                                          attribute:NSLayoutAttributeLeading
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:locationBarVC.view.superview
+//                                                          attribute:NSLayoutAttributeLeading
+//                                                         multiplier:1.0
+//                                                           constant:0.0]];
+//    
+//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
+//                                                          attribute:NSLayoutAttributeTop
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:self.topLayoutGuide
+//                                                          attribute:NSLayoutAttributeLeading
+//                                                         multiplier:1.0
+//                                                           constant:self.navigationController.view.frame.size.height]];
+//    
+//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
+//                                                          attribute:NSLayoutAttributeTrailing
+//                                                          relatedBy:NSLayoutRelationEqual
+//                                                             toItem:locationBarVC.view.superview
+//                                                          attribute:NSLayoutAttributeTrailing
+//                                                         multiplier:1.0
+//                                                           constant:0.0]];
     
 }
 
