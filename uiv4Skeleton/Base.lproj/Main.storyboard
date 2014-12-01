@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="N4I-t3-cf3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LIh-iF-JIe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -138,7 +138,7 @@
         <!--Map VC-->
         <scene sceneID="oJh-lB-bdJ">
             <objects>
-                <viewController id="zk7-4V-4ih" sceneMemberID="viewController">
+                <viewController id="zk7-4V-4ih" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LaQ-1z-PHQ"/>
                         <viewControllerLayoutGuide type="bottom" id="BbC-JM-Xkk"/>
@@ -147,22 +147,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUE-Jp-18s" userLabel="bottom container">
-                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csU-E6-63o" userLabel="top container">
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="WKe-df-3SI"/>
+                                    <constraint firstAttribute="height" constant="100" id="hHT-He-UT1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
                                 <rect key="frame" x="0.0" y="164" width="600" height="256"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csU-E6-63o" userLabel="top container">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUE-Jp-18s" userLabel="bottom container">
+                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="hHT-He-UT1"/>
+                                    <constraint firstAttribute="height" constant="180" id="WKe-df-3SI"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -181,6 +181,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
+                    <connections>
+                        <outlet property="bottomContainer" destination="gUE-Jp-18s" id="vdG-xI-Uk6"/>
+                        <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
+                        <outlet property="topContainer" destination="csU-E6-63o" id="OUw-BF-W7M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +194,7 @@
         <!--LocationBarVC-->
         <scene sceneID="Exu-Gi-1TE">
             <objects>
-                <viewController id="vlb-p9-utU" userLabel="LocationBarVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationBarVC" id="vlb-p9-utU" userLabel="LocationBarVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXO-CZ-XcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="spQ-fP-7I3"/>
