@@ -282,7 +282,53 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wsf-OH-IOX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-cD-10R">
+                                <rect key="frame" x="0.0" y="80" width="600" height="100"/>
+                                <color key="backgroundColor" red="0.47843137250000001" green="0.066666666669999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Fhl-vf-FK8"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkF-7c-QIb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6M-SK-QdD">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+                                        <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-pF-hqK">
+                                        <rect key="frame" x="360" y="0.0" width="240" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="y6M-SK-QdD" firstAttribute="leading" secondItem="AkF-7c-QIb" secondAttribute="leading" id="SR3-nI-X3m"/>
+                                    <constraint firstAttribute="bottom" secondItem="y6M-SK-QdD" secondAttribute="bottom" id="Y2P-H7-7U9"/>
+                                    <constraint firstAttribute="bottom" secondItem="XPt-pF-hqK" secondAttribute="bottom" id="Y2c-Tb-VG3"/>
+                                    <constraint firstItem="XPt-pF-hqK" firstAttribute="leading" secondItem="y6M-SK-QdD" secondAttribute="trailing" id="ahI-5m-04o"/>
+                                    <constraint firstItem="y6M-SK-QdD" firstAttribute="trailing" secondItem="AkF-7c-QIb" secondAttribute="centerX" multiplier="1.2" id="iZp-0f-Edc"/>
+                                    <constraint firstItem="y6M-SK-QdD" firstAttribute="top" secondItem="AkF-7c-QIb" secondAttribute="top" id="pZT-zv-dTw"/>
+                                    <constraint firstAttribute="trailing" secondItem="XPt-pF-hqK" secondAttribute="trailing" id="qxH-DH-iJa"/>
+                                    <constraint firstItem="XPt-pF-hqK" firstAttribute="top" secondItem="AkF-7c-QIb" secondAttribute="top" id="z3H-Dr-woq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AkF-7c-QIb" firstAttribute="leading" secondItem="Wsf-OH-IOX" secondAttribute="leading" id="15o-qw-06b"/>
+                            <constraint firstAttribute="trailing" secondItem="AkF-7c-QIb" secondAttribute="trailing" id="DlV-xq-z33"/>
+                            <constraint firstItem="8rj-le-EE0" firstAttribute="top" secondItem="Jla-cD-10R" secondAttribute="bottom" id="FZL-Dm-D4Y"/>
+                            <constraint firstItem="Jla-cD-10R" firstAttribute="leading" secondItem="Wsf-OH-IOX" secondAttribute="leading" id="IUw-bA-fX9"/>
+                            <constraint firstAttribute="trailing" secondItem="Jla-cD-10R" secondAttribute="trailing" id="Tha-21-GJa"/>
+                            <constraint firstItem="AkF-7c-QIb" firstAttribute="top" secondItem="d8w-Xb-ebN" secondAttribute="bottom" id="kkx-cZ-tgo"/>
+                            <constraint firstItem="Jla-cD-10R" firstAttribute="top" secondItem="AkF-7c-QIb" secondAttribute="bottom" id="mCi-Vp-Ynn"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                 </viewController>
