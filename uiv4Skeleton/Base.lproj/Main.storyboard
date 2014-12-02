@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LIh-iF-JIe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -147,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
                                 <rect key="frame" x="0.0" y="164" width="600" height="256"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -172,7 +173,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uZG-Y6-Enp" firstAttribute="top" secondItem="7VI-lI-MWN" secondAttribute="bottom" id="1Bn-8W-ChH"/>
                             <constraint firstItem="7VI-lI-MWN" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="1pt-9B-o2J"/>
+                            <constraint firstItem="78c-Jc-6iU" firstAttribute="top" secondItem="uZG-Y6-Enp" secondAttribute="bottom" id="FIK-ZR-jyN"/>
                             <constraint firstItem="uZG-Y6-Enp" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="FdX-30-HN5"/>
                             <constraint firstItem="78c-Jc-6iU" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="KNK-rv-iMJ"/>
                             <constraint firstAttribute="trailing" secondItem="78c-Jc-6iU" secondAttribute="trailing" id="QPL-SG-cHc"/>
@@ -194,7 +197,7 @@
         <!--LocationBarVC-->
         <scene sceneID="Exu-Gi-1TE">
             <objects>
-                <viewController storyboardIdentifier="locationBarVC" id="vlb-p9-utU" userLabel="LocationBarVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Location Bar VC" id="vlb-p9-utU" userLabel="LocationBarVC" customClass="LocationBarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXO-CZ-XcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="spQ-fP-7I3"/>
@@ -204,18 +207,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyu-ox-6YH" userLabel="pickupBarView">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
                                 <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pll-pe-4fe" userLabel="dropoffBarView">
-                                <rect key="frame" x="360" y="0.0" width="240" height="80"/>
+                                <rect key="frame" x="300" y="0.0" width="300" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pll-pe-4fe" firstAttribute="leading" secondItem="kyu-ox-6YH" secondAttribute="trailing" id="Dp4-FC-VWG"/>
-                            <constraint firstItem="kyu-ox-6YH" firstAttribute="trailing" secondItem="I6C-b4-dZP" secondAttribute="centerXWithinMargins" multiplier="1.2" id="Jp5-Fg-EHa"/>
+                            <constraint firstItem="kyu-ox-6YH" firstAttribute="trailing" secondItem="I6C-b4-dZP" secondAttribute="centerXWithinMargins" id="Jp5-Fg-EHa"/>
                             <constraint firstItem="kyu-ox-6YH" firstAttribute="top" secondItem="I6C-b4-dZP" secondAttribute="top" id="M2Y-th-eeu"/>
                             <constraint firstItem="kyu-ox-6YH" firstAttribute="leading" secondItem="I6C-b4-dZP" secondAttribute="leading" id="Q3o-Ej-0uf"/>
                             <constraint firstAttribute="trailing" secondItem="pll-pe-4fe" secondAttribute="trailing" id="QoZ-nJ-Ic4"/>
@@ -230,28 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXz-RS-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="458" y="2676"/>
-        </scene>
-        <!--LocationButtonVC-->
-        <scene sceneID="NR5-J1-VR8">
-            <objects>
-                <viewController id="CoO-5L-CPM" userLabel="LocationButtonVC" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xkk-Sd-lxZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.47843137250000001" green="0.066666666669999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="100"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uB3-Xj-IWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="458" y="2918"/>
+            <point key="canvasLocation" x="1233" y="1613"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="itZ-hF-RPD">
@@ -289,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="-377" y="2020"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Selection View Controller-->
         <scene sceneID="VOb-2s-D0w">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="TDW-JV-TQT" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="TDW-JV-TQT" customClass="LocationSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d8w-Xb-ebN"/>
                         <viewControllerLayoutGuide type="bottom" id="8rj-le-EE0"/>

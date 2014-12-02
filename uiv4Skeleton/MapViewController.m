@@ -11,12 +11,9 @@
 
 @interface MapViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *topContainer;
 
 @property (weak, nonatomic) IBOutlet UIView *mapContainer;
 
-@property (weak, nonatomic) IBOutlet UIView *bottomContainer;
-@property (weak, nonatomic) LocationBarViewController *locationBarVC;
 
 @end
 
@@ -26,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self loadBottomContainer];
+    //[self loadBottomContainer];
 }
 
 - (void)didReceiveMemoryWarning {
