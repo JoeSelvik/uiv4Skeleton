@@ -10,9 +10,13 @@
 #import "MapViewController.h"
 
 @interface MapViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *topContainer;
+
 @property (weak, nonatomic) IBOutlet UIView *mapContainer;
+
 @property (weak, nonatomic) IBOutlet UIView *bottomContainer;
+@property (weak, nonatomic) LocationBarViewController *locationBarVC;
 
 @end
 
@@ -41,9 +45,10 @@
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationBarViewController *locationBarVC = [main instantiateViewControllerWithIdentifier:@"locationBarVC"];
     locationBarVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    self.locationBarVC = locationBarVC;
     
-    [self.bottomContainer addSubview:locationBarVC.view];
-    NSDictionary *viewsDictionary = @{@"locationBarView":locationBarVC.view};
+    //[self.bottomContainer addSubview:locationBarVC.view];
+    NSDictionary *viewsDictionary = @{@"locationBarView":self.locationBarVC.view};
     
     // Leading constraint
     NSArray *constraint_LEADING = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[locationBarView]"
@@ -71,7 +76,7 @@
                                                                          options:0
                                                                          metrics:nil
                                                                            views:viewsDictionary];
-    [locationBarVC.view addConstraints:constraint_HEIGHT];
+    [self.locationBarVC.view addConstraints:constraint_HEIGHT];
     
     
 }
