@@ -148,26 +148,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
-                                <rect key="frame" x="0.0" y="164" width="600" height="256"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78c-Jc-6iU">
-                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="1RK-Ht-9MN"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="TDW-JV-TQT" kind="embed" id="LfR-wT-VDV"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-lI-MWN">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-lI-MWN" userLabel="Top Container">
                                 <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="zKc-Cl-0RE"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="cna-ml-Bdd" kind="embed" id="wZh-Cm-ddj"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
+                                <rect key="frame" x="0.0" y="164" width="600" height="256"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78c-Jc-6iU" userLabel="Bottom Container">
+                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="1RK-Ht-9MN"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="TDW-JV-TQT" kind="embed" id="LfR-wT-VDV"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -187,17 +187,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
                     <connections>
+                        <outlet property="bottomContainerHeightConstraint" destination="1RK-Ht-9MN" id="giG-nm-Rad"/>
+                        <outlet property="bottomContainerVC" destination="78c-Jc-6iU" id="VW6-sN-YdN"/>
                         <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
+                        <outlet property="topContainerHeightConstraint" destination="zKc-Cl-0RE" id="WIB-he-O3a"/>
+                        <outlet property="topContainerVC" destination="7VI-lI-MWN" id="vHG-VW-1mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="458" y="2020"/>
         </scene>
-        <!--LocationBarVC-->
+        <!--Location Bar VC-->
         <scene sceneID="Exu-Gi-1TE">
             <objects>
-                <viewController storyboardIdentifier="Location Bar VC" id="vlb-p9-utU" userLabel="LocationBarVC" customClass="LocationBarViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationBarVC" id="vlb-p9-utU" userLabel="Location Bar VC" customClass="LocationBarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXO-CZ-XcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="spQ-fP-7I3"/>

@@ -11,9 +11,12 @@
 
 @interface MapViewController ()
 
-
+@property (weak, nonatomic) IBOutlet UIView *topContainerVC;
 @property (weak, nonatomic) IBOutlet UIView *mapContainer;
+@property (weak, nonatomic) IBOutlet UIView *bottomContainerVC;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContainerHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerHeightConstraint;
 
 @end
 
@@ -31,11 +34,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadTopContainer
+
+- (void)loadBottomContainer
 {
     
 }
-
-
 
 @end
