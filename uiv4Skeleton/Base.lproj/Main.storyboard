@@ -156,7 +156,16 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
                                 <rect key="frame" x="0.0" y="164" width="600" height="256"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLI-TF-pKJ">
+                                        <rect key="frame" x="196" y="54" width="208" height="147"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="WLI-TF-pKJ" firstAttribute="top" secondItem="uZG-Y6-Enp" secondAttribute="top" constant="54" id="22B-in-QMY"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUE-Jp-18s" userLabel="bottom container">
                                 <rect key="frame" x="0.0" y="420" width="600" height="180"/>

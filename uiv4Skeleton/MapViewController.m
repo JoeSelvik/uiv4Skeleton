@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self loadBottomContainer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,34 +40,39 @@
     // Grab the locationBar and button
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationBarViewController *locationBarVC = [main instantiateViewControllerWithIdentifier:@"locationBarVC"];
+    locationBarVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    UIView *box = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [self.bottomContainer addSubview:locationBarVC.view];
+    NSDictionary *viewsDictionary = @{@"locationBarView":locationBarVC.view};
     
-    [self.bottomContainer addSubview:box];
+    // Leading constraint
+    NSArray *constraint_LEADING = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[locationBarView]"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_LEADING];
     
-//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
-//                                                          attribute:NSLayoutAttributeLeading
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:locationBarVC.view.superview
-//                                                          attribute:NSLayoutAttributeLeading
-//                                                         multiplier:1.0
-//                                                           constant:0.0]];
-//    
-//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
-//                                                          attribute:NSLayoutAttributeTop
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:self.topLayoutGuide
-//                                                          attribute:NSLayoutAttributeLeading
-//                                                         multiplier:1.0
-//                                                           constant:self.navigationController.view.frame.size.height]];
-//    
-//    [self.bottomContainer addConstraint:[NSLayoutConstraint constraintWithItem:locationBarVC.view
-//                                                          attribute:NSLayoutAttributeTrailing
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:locationBarVC.view.superview
-//                                                          attribute:NSLayoutAttributeTrailing
-//                                                         multiplier:1.0
-//                                                           constant:0.0]];
+    // Top constraint
+    NSArray *constraint_TOP = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[locationBarView]"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                        views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_TOP];
+    
+    // Trailing constraint
+    NSArray *constraint_TRAILING = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[locationBarView]-0-|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_TRAILING];
+    
+    // Height constraint
+    NSArray *constraint_HEIGHT = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[locationBarView(80)]"
+                                                                         options:0
+                                                                         metrics:nil
+                                                                           views:viewsDictionary];
+    [locationBarVC.view addConstraints:constraint_HEIGHT];
+    
     
 }
 
