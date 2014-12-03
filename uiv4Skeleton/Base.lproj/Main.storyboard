@@ -152,14 +152,14 @@
                                 <rect key="frame" x="0.0" y="164" width="600" height="272"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-AA-j4c">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-AA-j4c" userLabel="bottomContainerView">
                                 <rect key="frame" x="0.0" y="436" width="600" height="164"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="uoD-Fg-DAk"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-ha-lJs">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-ha-lJs" userLabel="topContainerView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -183,7 +183,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
                     <connections>
+                        <outlet property="bottomContainerHeightConstraint" destination="Jxj-K0-KMz" id="oxz-TZ-Ftx"/>
+                        <outlet property="bottomContainerVC" destination="mjJ-AA-j4c" id="yj4-Te-TGH"/>
                         <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
+                        <outlet property="topContainerHeightConstraint" destination="Xb8-hu-9g5" id="uDj-88-a0c"/>
+                        <outlet property="topContainerVC" destination="iX8-ha-lJs" id="sMG-sA-rYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>

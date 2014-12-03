@@ -37,7 +37,7 @@
 
 - (void)loadBottomContainer
 {
-    [self.bottomContainerVC]
+    
 }
 
 @end
