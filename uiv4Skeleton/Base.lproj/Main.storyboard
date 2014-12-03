@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="-377" y="2020"/>
         </scene>
-        <!--Location Selection View Controller-->
+        <!--Location Selection VC-->
         <scene sceneID="VOb-2s-D0w">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="TDW-JV-TQT" customClass="LocationSelectionViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="TDW-JV-TQT" userLabel="Location Selection VC" customClass="LocationSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d8w-Xb-ebN"/>
                         <viewControllerLayoutGuide type="bottom" id="8rj-le-EE0"/>
@@ -294,14 +294,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AkF-7c-QIb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkF-7c-QIb" userLabel="locationBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6M-SK-QdD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6M-SK-QdD" userLabel="pickupView">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
                                         <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-pF-hqK">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-pF-hqK" userLabel="dropoffView">
                                         <rect key="frame" x="360" y="0.0" width="240" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -322,15 +322,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AkF-7c-QIb" firstAttribute="leading" secondItem="Wsf-OH-IOX" secondAttribute="leading" id="15o-qw-06b"/>
+                            <constraint firstItem="AkF-7c-QIb" firstAttribute="top" secondItem="d8w-Xb-ebN" secondAttribute="bottom" id="5Nf-9J-Kh4"/>
                             <constraint firstAttribute="trailing" secondItem="AkF-7c-QIb" secondAttribute="trailing" id="DlV-xq-z33"/>
                             <constraint firstItem="8rj-le-EE0" firstAttribute="top" secondItem="Jla-cD-10R" secondAttribute="bottom" id="FZL-Dm-D4Y"/>
                             <constraint firstItem="Jla-cD-10R" firstAttribute="leading" secondItem="Wsf-OH-IOX" secondAttribute="leading" id="IUw-bA-fX9"/>
                             <constraint firstAttribute="trailing" secondItem="Jla-cD-10R" secondAttribute="trailing" id="Tha-21-GJa"/>
-                            <constraint firstItem="AkF-7c-QIb" firstAttribute="top" secondItem="d8w-Xb-ebN" secondAttribute="bottom" id="kkx-cZ-tgo"/>
                             <constraint firstItem="Jla-cD-10R" firstAttribute="top" secondItem="AkF-7c-QIb" secondAttribute="bottom" id="mCi-Vp-Ynn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="180"/>
                 </viewController>
