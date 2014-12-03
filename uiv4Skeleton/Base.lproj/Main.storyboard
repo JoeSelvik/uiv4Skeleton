@@ -148,44 +148,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-lI-MWN" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="zKc-Cl-0RE"/>
-                                </constraints>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
-                                <rect key="frame" x="0.0" y="164" width="600" height="256"/>
+                                <rect key="frame" x="0.0" y="164" width="600" height="272"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78c-Jc-6iU" userLabel="Bottom Container">
-                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-AA-j4c">
+                                <rect key="frame" x="0.0" y="436" width="600" height="164"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="1RK-Ht-9MN"/>
+                                    <constraint firstAttribute="height" constant="164" id="uoD-Fg-DAk"/>
                                 </constraints>
-                            </containerView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-ha-lJs">
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="guk-6O-95A"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uZG-Y6-Enp" firstAttribute="top" secondItem="7VI-lI-MWN" secondAttribute="bottom" id="1Bn-8W-ChH"/>
-                            <constraint firstItem="7VI-lI-MWN" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="1pt-9B-o2J"/>
-                            <constraint firstItem="78c-Jc-6iU" firstAttribute="top" secondItem="uZG-Y6-Enp" secondAttribute="bottom" id="FIK-ZR-jyN"/>
+                            <constraint firstAttribute="trailing" secondItem="mjJ-AA-j4c" secondAttribute="trailing" id="1sn-Ip-m6A"/>
                             <constraint firstItem="uZG-Y6-Enp" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="FdX-30-HN5"/>
-                            <constraint firstItem="78c-Jc-6iU" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="KNK-rv-iMJ"/>
-                            <constraint firstAttribute="trailing" secondItem="78c-Jc-6iU" secondAttribute="trailing" id="QPL-SG-cHc"/>
-                            <constraint firstItem="7VI-lI-MWN" firstAttribute="top" secondItem="LaQ-1z-PHQ" secondAttribute="bottom" id="XRU-gW-HdN"/>
+                            <constraint firstItem="mjJ-AA-j4c" firstAttribute="top" secondItem="uZG-Y6-Enp" secondAttribute="bottom" id="Jxj-K0-KMz"/>
+                            <constraint firstItem="BbC-JM-Xkk" firstAttribute="top" secondItem="mjJ-AA-j4c" secondAttribute="bottom" id="QHz-eq-tyg"/>
+                            <constraint firstItem="uZG-Y6-Enp" firstAttribute="top" secondItem="iX8-ha-lJs" secondAttribute="bottom" id="Xb8-hu-9g5"/>
+                            <constraint firstAttribute="trailing" secondItem="iX8-ha-lJs" secondAttribute="trailing" id="hke-NT-J2Q"/>
+                            <constraint firstItem="mjJ-AA-j4c" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="kFU-x2-ikd"/>
                             <constraint firstAttribute="trailing" secondItem="uZG-Y6-Enp" secondAttribute="trailing" id="nBE-mH-T5t"/>
-                            <constraint firstAttribute="trailing" secondItem="7VI-lI-MWN" secondAttribute="trailing" id="t4t-5R-T6k"/>
-                            <constraint firstItem="BbC-JM-Xkk" firstAttribute="top" secondItem="78c-Jc-6iU" secondAttribute="bottom" id="xk2-OF-vJc"/>
+                            <constraint firstItem="iX8-ha-lJs" firstAttribute="top" secondItem="LaQ-1z-PHQ" secondAttribute="bottom" id="qhq-it-ocj"/>
+                            <constraint firstItem="iX8-ha-lJs" firstAttribute="leading" secondItem="HH3-oH-aMI" secondAttribute="leading" id="xa6-YF-d9o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
                     <connections>
-                        <outlet property="bottomContainerHeightConstraint" destination="1RK-Ht-9MN" id="giG-nm-Rad"/>
-                        <outlet property="bottomContainerVC" destination="78c-Jc-6iU" id="VW6-sN-YdN"/>
                         <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
-                        <outlet property="topContainerHeightConstraint" destination="zKc-Cl-0RE" id="WIB-he-O3a"/>
-                        <outlet property="topContainerVC" destination="7VI-lI-MWN" id="vHG-VW-1mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKy-QW-2hJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="2256"/>
+            <point key="canvasLocation" x="1233" y="2512"/>
         </scene>
     </scenes>
     <resources>
