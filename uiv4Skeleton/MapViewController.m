@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-
+    [self loadBottomContainer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,8 +42,16 @@
     LocationSelectionViewController *locationSelectionVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"locationSelectionVC"];
     
     [self addChildViewController:locationSelectionVC];
-    [self.bottomContainer addSubview:locationSelectionVC.view];
     
+    NSLog(@"top container frame: @%@", NSStringFromCGRect(self.topContainer.frame));
+    NSLog(@"bottom container frame: @%@", NSStringFromCGRect(self.bottomContainer.frame));
+    NSLog(@"location selection frame: @%@", NSStringFromCGRect(locationSelectionVC.view.frame));
+    
+    CGRect frame = CGRectMake(0, 0, 320, 180);
+    locationSelectionVC.view.frame = frame;
+    
+    [self.bottomContainer addSubview:locationSelectionVC.view];
+    [locationSelectionVC didMoveToParentViewController:self];
 }
 
 @end
