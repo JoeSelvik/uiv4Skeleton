@@ -40,6 +40,7 @@
 {
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationSelectionViewController *locationSelectionVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"locationSelectionVC"];
+    locationSelectionVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:locationSelectionVC];
     
@@ -47,10 +48,38 @@
     NSLog(@"bottom container frame: @%@", NSStringFromCGRect(self.bottomContainer.frame));
     NSLog(@"location selection frame: @%@", NSStringFromCGRect(locationSelectionVC.view.frame));
     
-    CGRect frame = CGRectMake(0, 0, 320, 180);
-    locationSelectionVC.view.frame = frame;
-    
     [self.bottomContainer addSubview:locationSelectionVC.view];
+    NSDictionary *viewsDictionary = @{@"locationBarView":locationSelectionVC.view};
+    
+    // Leading constraint
+    NSArray *constraint_LEADING = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[locationBarView]"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_LEADING];
+    
+    // Top constraint
+    NSArray *constraint_TOP = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[locationBarView]"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_TOP];
+    
+    // Trailing constraint
+    NSArray *constraint_TRAILING = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[locationBarView]-0-|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_TRAILING];
+    
+    // Bottom constraint
+    NSArray *constraint_BOTTOM = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[locationBarView]-0-|"
+                                                                         options:0
+                                                                         metrics:nil
+                                                                           views:viewsDictionary];
+    [self.bottomContainer addConstraints:constraint_BOTTOM];
+    
+    
     [locationSelectionVC didMoveToParentViewController:self];
 }
 
