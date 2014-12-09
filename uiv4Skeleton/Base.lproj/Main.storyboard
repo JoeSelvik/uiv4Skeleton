@@ -299,11 +299,59 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6M-SK-QdD" userLabel="pickupView">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldShield" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-LP-2EP">
+                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="pBD-LZ-IEo"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ynB-ih-ifa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-PW-0Yb">
+                                                <rect key="frame" x="68" y="20" width="272" height="40"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="kDN-PW-0Yb" firstAttribute="leading" secondItem="LC6-LP-2EP" secondAttribute="trailing" constant="8" symbolic="YES" id="0yR-G1-TBp"/>
+                                            <constraint firstItem="LC6-LP-2EP" firstAttribute="top" secondItem="y6M-SK-QdD" secondAttribute="top" constant="20" symbolic="YES" id="3ZP-ej-p1X"/>
+                                            <constraint firstItem="kDN-PW-0Yb" firstAttribute="top" secondItem="y6M-SK-QdD" secondAttribute="top" constant="20" symbolic="YES" id="CEq-GI-MO0"/>
+                                            <constraint firstAttribute="trailing" secondItem="kDN-PW-0Yb" secondAttribute="trailing" constant="20" symbolic="YES" id="Ipa-Pk-B1E"/>
+                                            <constraint firstAttribute="bottom" secondItem="kDN-PW-0Yb" secondAttribute="bottom" constant="20" symbolic="YES" id="JV0-8m-Eir"/>
+                                            <constraint firstItem="LC6-LP-2EP" firstAttribute="leading" secondItem="y6M-SK-QdD" secondAttribute="leading" constant="20" symbolic="YES" id="cLe-zc-ZgE"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-pF-hqK" userLabel="dropoffView">
                                         <rect key="frame" x="360" y="0.0" width="240" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-lf-guG">
+                                                <rect key="frame" x="68" y="20" width="152" height="40"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maroonShield" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-Vd-uaH">
+                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="65X-Iz-Gdg"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Dm9-nY-TcB"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ajs-Vd-uaH" firstAttribute="leading" secondItem="XPt-pF-hqK" secondAttribute="leading" constant="20" symbolic="YES" id="4aQ-OY-0NT"/>
+                                            <constraint firstAttribute="trailing" secondItem="WVI-lf-guG" secondAttribute="trailing" constant="20" symbolic="YES" id="8j7-wn-MZv"/>
+                                            <constraint firstItem="Ajs-Vd-uaH" firstAttribute="top" secondItem="XPt-pF-hqK" secondAttribute="top" constant="20" symbolic="YES" id="Apy-Dl-VI5"/>
+                                            <constraint firstAttribute="bottom" secondItem="WVI-lf-guG" secondAttribute="bottom" constant="20" symbolic="YES" id="FjI-OG-ECy"/>
+                                            <constraint firstItem="WVI-lf-guG" firstAttribute="top" secondItem="XPt-pF-hqK" secondAttribute="top" constant="20" symbolic="YES" id="LgM-DS-DE0"/>
+                                            <constraint firstItem="WVI-lf-guG" firstAttribute="leading" secondItem="Ajs-Vd-uaH" secondAttribute="trailing" constant="8" symbolic="YES" id="UoY-DE-yAo"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
