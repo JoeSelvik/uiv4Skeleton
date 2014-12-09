@@ -38,17 +38,16 @@
 
 - (void)loadBottomContainer
 {
+    // Grab the locationSelectionVC from the SB and set it up
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationSelectionViewController *locationSelectionVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"locationSelectionVC"];
     locationSelectionVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
+    // Setup the VC, then Views heirarchy
     [self addChildViewController:locationSelectionVC];
-    
-    NSLog(@"top container frame: @%@", NSStringFromCGRect(self.topContainer.frame));
-    NSLog(@"bottom container frame: @%@", NSStringFromCGRect(self.bottomContainer.frame));
-    NSLog(@"location selection frame: @%@", NSStringFromCGRect(locationSelectionVC.view.frame));
-    
     [self.bottomContainer addSubview:locationSelectionVC.view];
+    
+    // The locationSelectionVC need to be constrained to the bottom view container
     NSDictionary *viewsDictionary = @{@"locationBarView":locationSelectionVC.view};
     
     // Leading constraint
@@ -79,7 +78,7 @@
                                                                            views:viewsDictionary];
     [self.bottomContainer addConstraints:constraint_BOTTOM];
     
-    
+    // Needed to finish the setup?
     [locationSelectionVC didMoveToParentViewController:self];
 }
 
