@@ -307,7 +307,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="ynB-ih-ifa"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-PW-0Yb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-PW-0Yb">
                                                 <rect key="frame" x="68" y="20" width="272" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -328,7 +328,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-pF-hqK" userLabel="dropoffView">
                                         <rect key="frame" x="360" y="0.0" width="240" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-lf-guG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-lf-guG">
                                                 <rect key="frame" x="68" y="20" width="152" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -382,6 +382,15 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="180"/>
+                    <connections>
+                        <outlet property="dropoffBarLabel" destination="WVI-lf-guG" id="Kcl-DI-x7Z"/>
+                        <outlet property="dropoffBarView" destination="XPt-pF-hqK" id="g2r-Cr-Yso"/>
+                        <outlet property="locationBarSlideConstraint" destination="iZp-0f-Edc" id="LtP-le-7oW"/>
+                        <outlet property="locationBarView" destination="AkF-7c-QIb" id="IUj-Im-mV8"/>
+                        <outlet property="locationButton" destination="Jla-cD-10R" id="CXe-ho-tIU"/>
+                        <outlet property="pickupBarLabel" destination="kDN-PW-0Yb" id="kHf-gj-4T8"/>
+                        <outlet property="pickupBarView" destination="y6M-SK-QdD" id="VOd-o3-EKb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKy-QW-2hJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
