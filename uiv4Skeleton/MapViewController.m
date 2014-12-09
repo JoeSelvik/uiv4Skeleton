@@ -10,14 +10,6 @@
 #import "LocationSelectionViewController.h"
 #import "MapViewController.h"
 
-typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
-    TNTMapViewControllerStateDragForPickup,
-    TNTMapViewControllerStateDraggedForPickup,
-    TNTMapViewControllerStateDragForDropoff,
-    TNTMapViewControllerStateDraggedForDropoff,
-    TNTMapViewControllerStateContactingDispatch
-};
-
 @interface MapViewController ()
 
 @property (assign, nonatomic) TNTMapViewControllerState state;
@@ -50,6 +42,16 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (TNTMapViewControllerState)mapVCState
+{
+    return self.state;
+}
+
+- (void) setMapVCState:(TNTMapViewControllerState)state
+{
+    self.state = state;
 }
 
 #pragma mark - State

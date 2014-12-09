@@ -11,6 +11,7 @@
 @interface LocationSelectionViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *locationBarView;
+
 @property (weak, nonatomic) IBOutlet UIView *pickupBarView;
 @property (weak, nonatomic) IBOutlet UILabel *pickupBarLabel;
 
@@ -29,7 +30,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Setup the locationBar with correct gesture recognizers
+    UITapGestureRecognizer *tapDropoffBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRight:)];
+    UITapGestureRecognizer *tapPickupBarView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLeft:)];
+    
+    [self.dropoffBarView addGestureRecognizer:tapDropoffBarView];
+    [self.pickupBarView addGestureRecognizer:tapPickupBarView];
+    
+    self.pickupBarLabel.contentMode = UIViewContentModeScaleToFill;
+    self.dropoffBarLabel.contentMode = UIViewContentModeScaleToFill;
+    
+    self.pickupBarSelected = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,4 +70,13 @@
 {
     
 }
+
+// Put any functionality here that needs the tapRecognizer
+- (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
+{
+    [self animateToDragForDropoffState];
+}
+
+
+
 @end

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
+    TNTMapViewControllerStateDragForPickup,
+    TNTMapViewControllerStateDraggedForPickup,
+    TNTMapViewControllerStateDragForDropoff,
+    TNTMapViewControllerStateDraggedForDropoff,
+    TNTMapViewControllerStateContactingDispatch
+};
+
+
 @interface MapViewController : UIViewController
+
+- (TNTMapViewControllerState)mapVCState;
+- (void) setMapVCState:(TNTMapViewControllerState)state;
 
 @end
