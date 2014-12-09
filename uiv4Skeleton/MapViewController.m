@@ -29,9 +29,9 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContainerHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerHeightConstraint;
 
+@property (weak, nonatomic) LocationSelectionViewController *locationSelectionVC;
 
 - (void)didUpdateState;
-
 
 @end
 
@@ -39,7 +39,10 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Set our initial state. For demo skip the drag state
+    self.state = TNTMapViewControllerStateDraggedForPickup;
+    [self didUpdateState];
 
     [self loadBottomContainer];
 }
@@ -49,6 +52,40 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - State
+
+- (void)didUpdateState
+{
+    switch (self.state) {
+        // Initiallized when map gets dragged. Not for this demo app.
+        case TNTMapViewControllerStateDragForPickup: {
+            [self.locationSelectionVC disableButton];
+            break;
+        }
+            
+        case TNTMapViewControllerStateDraggedForPickup: {
+
+            break;
+        }
+            
+        case TNTMapViewControllerStateDragForDropoff: {
+
+            break;
+        }
+            
+        case TNTMapViewControllerStateDraggedForDropoff: {
+
+            break;
+        }
+            
+        case TNTMapViewControllerStateContactingDispatch: {
+            break;
+        }
+    }
+}
+
+
+#pragma mark - Containers
 
 - (void)loadTopContainer
 {
@@ -99,6 +136,9 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     
     // Needed to finish the setup?
     [locationSelectionVC didMoveToParentViewController:self];
+    
+    // Create a pointer to this VC for future use
+    self.locationSelectionVC = locationSelectionVC;
 }
 
 @end

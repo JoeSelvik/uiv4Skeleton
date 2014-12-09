@@ -37,8 +37,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)enableButton
+{
+    self.locationButton.enabled = YES;
+}
+
+- (void)disableButton
+{
+    self.locationButton.enabled = NO;
+}
 
 
-- (IBAction)tappedLocationButton:(id)sender {
+- (IBAction)tappedLocationButton:(id)sender
+{
+    
 }
 @end

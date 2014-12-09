@@ -10,4 +10,7 @@
 
 @interface LocationSelectionViewController : UIViewController
 
+- (void)enableButton;
+- (void)disableButton;
+
 @end
