@@ -12,5 +12,6 @@
 
 - (void)enableButton;
 - (void)disableButton;
+- (void)setButtonTitle:(NSString *)title;
 
 @end

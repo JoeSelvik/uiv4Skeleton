@@ -47,6 +47,11 @@
     self.locationButton.enabled = NO;
 }
 
+- (void)setButtonTitle:(NSString *)title
+{
+    [self.locationButton setTitle:title forState:UIControlStateNormal];
+}
+
 
 - (IBAction)tappedLocationButton:(id)sender
 {

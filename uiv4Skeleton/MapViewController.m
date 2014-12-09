@@ -60,21 +60,25 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
         // Initiallized when map gets dragged. Not for this demo app.
         case TNTMapViewControllerStateDragForPickup: {
             [self.locationSelectionVC disableButton];
+            [self.locationSelectionVC setButtonTitle:@"Pickup Location"];
             break;
         }
             
         case TNTMapViewControllerStateDraggedForPickup: {
-
+            [self.locationSelectionVC enableButton];
+            [self.locationSelectionVC setButtonTitle:@"Pickup Location"];
             break;
         }
             
         case TNTMapViewControllerStateDragForDropoff: {
-
+            [self.locationSelectionVC disableButton];
+            [self.locationSelectionVC setButtonTitle:@"Dropoff Location"];
             break;
         }
             
         case TNTMapViewControllerStateDraggedForDropoff: {
-
+            [self.locationSelectionVC disableButton];
+            [self.locationSelectionVC setButtonTitle:@"Dropoff Location"];
             break;
         }
             
