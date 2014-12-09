@@ -77,6 +77,39 @@
     [self animateToDragForDropoffState];
 }
 
-
+// There are multiple ways to change state though
+- (void)animateToDragForDropoffState
+{
+    if (self.pickupBarSelected) {
+        // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
+        [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
+        self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
+                                                                       attribute:NSLayoutAttributeTrailing
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.locationBarView
+                                                                       attribute:NSLayoutAttributeCenterX
+                                                                      multiplier:0.8
+                                                                        constant:0.0
+                                           ];
+        [self.locationBarView addConstraint:self.locationBarSlideConstraint];
+        
+        // Animate the location bar.
+        [UIView animateWithDuration:0.5
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             [self.locationBarView layoutIfNeeded];
+                         }
+                         completion:nil
+         ];
+        
+        // Update the state.
+        self.state = TNTMapViewControllerStateDraggedForDropoff;
+        [self didUpdateState];
+        
+        // Protects against double taps.
+        self.pickupBarSelected = NO;
+    }
+}
 
 @end
