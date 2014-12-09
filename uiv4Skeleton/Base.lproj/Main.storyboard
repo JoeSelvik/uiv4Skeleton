@@ -293,6 +293,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedLocationButton:" destination="TDW-JV-TQT" eventType="touchUpInside" id="mCe-eR-Lox"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkF-7c-QIb" userLabel="locationBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>

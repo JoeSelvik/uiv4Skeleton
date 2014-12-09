@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dropoffBarLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
+- (IBAction)tappedLocationButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *locationBarSlideConstraint;
 @property (nonatomic, assign) BOOL pickupBarSelected;
@@ -38,4 +39,6 @@
 
 
 
+- (IBAction)tappedLocationButton:(id)sender {
+}
 @end

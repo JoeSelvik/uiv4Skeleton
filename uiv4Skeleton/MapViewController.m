@@ -10,7 +10,17 @@
 #import "LocationSelectionViewController.h"
 #import "MapViewController.h"
 
+typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
+    TNTMapViewControllerStateDragForPickup,
+    TNTMapViewControllerStateDraggedForPickup,
+    TNTMapViewControllerStateDragForDropoff,
+    TNTMapViewControllerStateDraggedForDropoff,
+    TNTMapViewControllerStateContactingDispatch
+};
+
 @interface MapViewController ()
+
+@property (assign, nonatomic) TNTMapViewControllerState state;
 
 @property (weak, nonatomic) IBOutlet UIView *topContainer;
 @property (weak, nonatomic) IBOutlet UIView *mapContainer;
@@ -18,6 +28,10 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContainerHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerHeightConstraint;
+
+
+- (void)didUpdateState;
+
 
 @end
 
