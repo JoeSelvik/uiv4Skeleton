@@ -7,8 +7,15 @@
 //
 
 #import "LocationBarViewController.h"
-#import "LocationSelectionViewController.h"
 #import "MapViewController.h"
+
+typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
+    TNTMapViewControllerStateDragForPickup,
+    TNTMapViewControllerStateDraggedForPickup,
+    TNTMapViewControllerStateDragForDropoff,
+    TNTMapViewControllerStateDraggedForDropoff,
+    TNTMapViewControllerStateContactingDispatch
+};
 
 @interface MapViewController ()
 
