@@ -104,6 +104,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationSelectionViewController *locationSelectionVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"locationSelectionVC"];
     locationSelectionVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    locationSelectionVC.delegate = self;
     
     // Setup the VC, then Views heirarchy
     [self addChildViewController:locationSelectionVC];
@@ -145,6 +146,18 @@
     
     // Create a pointer to this VC for future use
     self.locationSelectionVC = locationSelectionVC;
+}
+
+#pragma mark - LocationSelectionViewControllerDelegate Methods
+
+- (void)locationSelectionVC:(LocationSelectionViewController *)viewController didPressPickup:(BOOL)pickupBarSelected
+{
+    if (pickupBarSelected) {
+        self.state = TNTMapViewControllerStateDraggedForDropoff;
+        [self didUpdateState];
+    } else {
+        
+    }
 }
 
 @end

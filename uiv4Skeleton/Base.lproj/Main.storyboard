@@ -294,6 +294,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="handleLocationButton:" destination="TDW-JV-TQT" eventType="touchUpInside" id="Uvn-vs-Gkb"/>
                                     <action selector="tappedLocationButton:" destination="TDW-JV-TQT" eventType="touchUpInside" id="mCe-eR-Lox"/>
                                 </connections>
                             </button>

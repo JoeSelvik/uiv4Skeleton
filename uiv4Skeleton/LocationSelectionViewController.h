@@ -8,10 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LocationSelectionViewControllerDelegate;
+
+
 @interface LocationSelectionViewController : UIViewController
+
+@property (nonatomic, weak) id<LocationSelectionViewControllerDelegate> delegate;
 
 - (void)enableButton;
 - (void)disableButton;
 - (void)setButtonTitle:(NSString *)title;
+
+- (IBAction)handleLocationButton:(id)sender;
+
+@end
+
+
+@protocol LocationSelectionViewControllerDelegate <NSObject>
+
+- (void)locationSelectionVC:(LocationSelectionViewController *)viewController didPressPickup:(BOOL)pickupBarSelected;
 
 @end

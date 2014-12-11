@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
 };
 
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <LocationSelectionViewControllerDelegate>
 
 - (TNTMapViewControllerState)mapVCState;
 - (void) setMapVCState:(TNTMapViewControllerState)state;
