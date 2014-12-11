@@ -44,6 +44,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - State Control
+
 - (TNTMapViewControllerState)mapVCState
 {
     return self.state;
@@ -53,8 +56,6 @@
 {
     self.state = state;
 }
-
-#pragma mark - State
 
 - (void)didUpdateState
 {
@@ -148,16 +149,8 @@
     self.locationSelectionVC = locationSelectionVC;
 }
 
+
 #pragma mark - LocationSelectionViewControllerDelegate Methods
 
-- (void)locationSelectionVC:(LocationSelectionViewController *)viewController didPressPickup:(BOOL)pickupBarSelected
-{
-    if (pickupBarSelected) {
-        self.state = TNTMapViewControllerStateDraggedForDropoff;
-        [self didUpdateState];
-    } else {
-        
-    }
-}
 
 @end

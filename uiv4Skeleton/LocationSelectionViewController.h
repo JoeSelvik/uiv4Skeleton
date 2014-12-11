@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MapViewController.h"
-
 @protocol LocationSelectionViewControllerDelegate;
 
 
@@ -20,8 +18,6 @@
 - (void)enableButton;
 - (void)disableButton;
 - (void)setButtonTitle:(NSString *)title;
-
-- (IBAction)handleLocationButton:(id)sender;
 
 @end
 
