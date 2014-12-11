@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880F120C1A3978C800A8C37A /* baltoStateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baltoStateProtocol.h; sourceTree = "<group>"; };
 		885F135F1A1D8FC300E8F081 /* uiv4Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uiv4Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885F13631A1D8FC300E8F081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885F13641A1D8FC300E8F081 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 				885F136C1A1D8FC300E8F081 /* Main.storyboard */,
 				887B2FC11A2C2F0700F19196 /* LocationBarViewController.h */,
 				887B2FC21A2C2F0700F19196 /* LocationBarViewController.m */,
+				880F120C1A3978C800A8C37A /* baltoStateProtocol.h */,
 				887B2FBE1A2C2D2400F19196 /* MapViewController.h */,
 				887B2FBF1A2C2D2400F19196 /* MapViewController.m */,
 				887B2FF91A2D8CC900F19196 /* LocationSelectionViewController.h */,

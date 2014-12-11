@@ -1,23 +1,18 @@
 //
-//  MapViewController.h
+//  baltoStateProtocol.h
 //  uiv4Skeleton
 //
-//  Created by Joe Selvik on 11/30/14.
+//  Created by Joe Selvik on 12/11/14.
 //  Copyright (c) 2014 The New Tricks. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "LocationSelectionViewController.h"
-
-@protocol MapViewControllerStateDelegate;
+#ifndef uiv4Skeleton_baltoStateProtocol_h
+#define uiv4Skeleton_baltoStateProtocol_h
 
 
-@interface MapViewController : UIViewController <LocationSelectionViewControllerDelegate>
+#endif
 
-@property (nonatomic, weak) id<MapViewControllerStateDelegate>locationSelectionVCDelegate;
-
-@end
-
+#import <Foundation/Foundation.h>
 
 @protocol MapViewControllerStateDelegate <NSObject>
 
