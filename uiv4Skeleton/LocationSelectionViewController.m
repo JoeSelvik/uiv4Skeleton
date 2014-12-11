@@ -7,7 +7,6 @@
 //
 
 #import "LocationSelectionViewController.h"
-#import "MapViewController.h"
 
 @interface LocationSelectionViewController ()
 
@@ -69,10 +68,16 @@
 
 - (IBAction)handleLocationButton:(id)sender
 {
-    MapViewController *mapVC = self.delegate;
+    // Get the mapVC
+    id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
+    MapViewController *mapVC = (MapViewController*)strongDelegate;
     
     if ([mapVC mapVCState] == TNTMapViewControllerStateDraggedForPickup ) {
-        <#statements#>
+        [self animateToDragForDropoffState];
+    } else if ( [mapVC mapVCState] == TNTMapViewControllerStateDraggedForDropoff ) {
+        // [self animateToContactingDispatchState];
+    } else {
+        // Should not be possible!
     }
     
 }
@@ -112,8 +117,8 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:didPressPickup:)]) {
-            [strongDelegate locationSelectionVC:self didPressPickup:YES];
+        if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
+            [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateDraggedForDropoff];
         }
         
         // Protects against double taps.

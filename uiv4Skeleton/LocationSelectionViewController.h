@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MapViewController.h"
+
 @protocol LocationSelectionViewControllerDelegate;
 
 
@@ -26,6 +28,6 @@
 
 @protocol LocationSelectionViewControllerDelegate <NSObject>
 
-- (void)locationSelectionVC:(LocationSelectionViewController *)viewController didPressPickup:(BOOL)pickupBarSelected;
+- (void)locationSelectionVC:(LocationSelectionViewController *)viewController movedToNextState:(TNTMapViewControllerState)state;
 
 @end
