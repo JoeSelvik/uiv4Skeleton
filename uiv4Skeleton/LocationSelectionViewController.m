@@ -50,6 +50,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - UI Control
+
 - (void)enableButton
 {
     self.locationButton.enabled = YES;
@@ -65,6 +68,17 @@
     [self.locationButton setTitle:title forState:UIControlStateNormal];
 }
 
+// Put any functionality here that needs the right tapRecognizer
+- (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
+{
+    [self animateToDragForDropoffState];
+}
+
+// Put any functionality here that needs the left tapRecognizer
+- (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
+{
+    [self animateToDragForPickupState];
+}
 
 - (IBAction)handleLocationButton:(id)sender
 {
@@ -75,20 +89,17 @@
     if ([mapVC mapVCState] == TNTMapViewControllerStateDraggedForPickup ) {
         [self animateToDragForDropoffState];
     } else if ( [mapVC mapVCState] == TNTMapViewControllerStateDraggedForDropoff ) {
-        // [self animateToContactingDispatchState];
+        [self animateToContactingDispatchState];
     } else {
-        // Should not be possible!
+        // TODO - Handle error, should not be possible!
     }
     
 }
 
-// Put any functionality here that needs the tapRecognizer
-- (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
-{
-    [self animateToDragForDropoffState];
-}
 
-// There are multiple ways to change state though
+#pragma mark - State Control
+
+// There are multiple ways to change from this state
 - (void)animateToDragForDropoffState
 {
     if (self.pickupBarSelected) {
@@ -119,10 +130,67 @@
         
         if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
             [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateDraggedForDropoff];
+        } else {
+            // TODO - handle error
         }
         
         // Protects against double taps.
         self.pickupBarSelected = NO;
+    }
+}
+
+
+// There are multiple ways to change state though
+- (void)animateToDragForPickupState
+{
+    if (!self.pickupBarSelected) {
+        // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
+        [self.locationBarView removeConstraint:self.locationBarSlideConstraint];
+        self.locationBarSlideConstraint = [NSLayoutConstraint constraintWithItem:self.pickupBarView
+                                                                       attribute:NSLayoutAttributeTrailing
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.locationBarView
+                                                                       attribute:NSLayoutAttributeCenterX
+                                                                      multiplier:1.2
+                                                                        constant:0.0
+                                           ];
+        [self.locationBarView addConstraint:self.locationBarSlideConstraint];
+        
+        // Animate the location bar.
+        [UIView animateWithDuration:0.5
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             [self.locationBarView layoutIfNeeded];
+                         }
+                         completion:nil
+         ];
+        
+        // Update the state.
+        id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
+        
+        if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
+            [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateDraggedForDropoff];
+        } else {
+            // TODO - Handle error
+        }
+        
+        // Protects against double taps.
+        self.pickupBarSelected = YES;
+    }
+}
+
+
+// This will move us onto the next VC position
+- (void)animateToContactingDispatchState
+{
+    // Update the state.
+    id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
+    
+    if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
+        [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateContactingDispatch];
+    } else {
+        // TODO - Handle error
     }
 }
 
