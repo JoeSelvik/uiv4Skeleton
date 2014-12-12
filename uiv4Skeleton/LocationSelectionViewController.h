@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-
 @protocol LocationSelectionViewControllerDelegate;
+@protocol MapViewControllerState;
 
 
-@interface LocationSelectionViewController : UIViewController
+@interface LocationSelectionViewController : UIViewController <MapViewControllerState>
 
 @property (nonatomic, weak) id<LocationSelectionViewControllerDelegate> delegate;
 

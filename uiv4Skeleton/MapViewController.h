@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "LocationSelectionViewController.h"
 
-@protocol MapViewControllerStateDelegate;
+@protocol MapViewControllerState;
 
 
 @interface MapViewController : UIViewController <LocationSelectionViewControllerDelegate>
 
-@property (nonatomic, weak) id<MapViewControllerStateDelegate>locationSelectionVCDelegate;
+@property (nonatomic, weak) id<MapViewControllerState>locationSelectionVCDelegate;
 
 @end
 
 
-@protocol MapViewControllerStateDelegate <NSObject>
+@protocol MapViewControllerState <NSObject>
 
 typedef NS_ENUM(NSInteger, TNTMapViewControllerState) {
     TNTMapViewControllerStateDragForPickup,
