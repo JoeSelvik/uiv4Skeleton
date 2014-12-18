@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     // Set our initial state. For demo skip the drag state
-    self.state = TNTMapViewControllerStateDraggedForPickup;
+    self.state = TNTMapViewControllerStateMovedPickup;
     [self didUpdateState];
 
     [self loadBottomContainer];
@@ -60,25 +60,25 @@
 {
     switch (self.state) {
         // Initiallized when map gets dragged. Not for this demo app.
-        case TNTMapViewControllerStateDragForPickup: {
+        case TNTMapViewControllerStateUnmovedPickup: {
             [self.locationSelectionVC disableButton];
             [self.locationSelectionVC setButtonTitle:@"Pickup Location"];
             break;
         }
             
-        case TNTMapViewControllerStateDraggedForPickup: {
+        case TNTMapViewControllerStateMovedPickup: {
             [self.locationSelectionVC enableButton];
             [self.locationSelectionVC setButtonTitle:@"Pickup Location"];
             break;
         }
             
-        case TNTMapViewControllerStateDragForDropoff: {
+        case TNTMapViewControllerStateUnmovedDropoff: {
             [self.locationSelectionVC disableButton];
             [self.locationSelectionVC setButtonTitle:@"Dropoff Location"];
             break;
         }
             
-        case TNTMapViewControllerStateDraggedForDropoff: {
+        case TNTMapViewControllerStateMovedDropoff: {
             [self.locationSelectionVC disableButton];
             [self.locationSelectionVC setButtonTitle:@"Dropoff Location"];
             break;
@@ -88,6 +88,12 @@
             break;
         }
     }
+}
+
+// Returns from making changes for a new state
+- (void)locationSelectionVC:(LocationSelectionViewController *)viewController movedToNextState:(TNTMapViewControllerState)state
+{
+    
 }
 
 

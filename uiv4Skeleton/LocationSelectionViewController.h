@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol LocationSelectionViewControllerDelegate;
-@protocol MapViewControllerState;
 
 
-@interface LocationSelectionViewController : UIViewController <MapViewControllerState>
+@interface LocationSelectionViewController : UIViewController
 
 @property (nonatomic, weak) id<LocationSelectionViewControllerDelegate> delegate;
 

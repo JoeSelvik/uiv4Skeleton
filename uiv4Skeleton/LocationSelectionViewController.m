@@ -82,17 +82,18 @@
 
 - (IBAction)handleLocationButton:(id)sender
 {
-    // Get the mapVC
-    id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
-    MapViewController *mapVC = (MapViewController*)strongDelegate;
-    
-    if ([mapVC mapVCState] == TNTMapViewControllerStateDraggedForPickup ) {
+    // Learn it's own state, go to next state
+    // TODO - is this a valid approach?
+    // TODO - logic to handle if it CAN move to next state
+    //      - ie: User taps Pickup Location button but map has not calculated location yet
+    if ([self.locationButton.titleLabel.text isEqualToString:@"Pickup Location"]) {
         [self animateToDragForDropoffState];
-    } else if ( [mapVC mapVCState] == TNTMapViewControllerStateDraggedForDropoff ) {
+    } else if ([self.locationButton.titleLabel.text isEqualToString:@"Dropoff Location"]) {
         [self animateToContactingDispatchState];
     } else {
         // TODO - Handle error, should not be possible!
     }
+    
     
 }
 
