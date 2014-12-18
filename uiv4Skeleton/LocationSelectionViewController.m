@@ -129,7 +129,7 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ([strongDelegate respondsToSelector:@selector(locationSelectionVCDropoffMoved:)]) {
+        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCDropoffMoved:)] ) {
             [strongDelegate locationSelectionVCDropoffMoved:self];
         } else {
             // TODO - handle error
@@ -188,8 +188,8 @@
     // Update the state.
     id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
     
-    if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
-        [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateContactingDispatch];
+    if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCContactDispatch:)] ) {
+        [strongDelegate locationSelectionVCContactDispatch:self];
     } else {
         // TODO - Handle error
     }

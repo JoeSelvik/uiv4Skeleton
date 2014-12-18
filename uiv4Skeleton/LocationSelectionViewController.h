@@ -28,6 +28,6 @@
 - (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController;
 - (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController;
 - (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController;
-- (void)locationSelectionContactDispatch:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionVCContactDispatch:(LocationSelectionViewController *)viewController;
 
 @end

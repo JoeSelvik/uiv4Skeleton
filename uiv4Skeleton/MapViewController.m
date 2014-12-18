@@ -90,9 +90,24 @@
     }
 }
 
-// Returns from making changes for a new state
-- (void)locationSelectionVC:(LocationSelectionViewController *)viewController movedToNextState:(TNTMapViewControllerState)state
-{
+// LocationSelectionVC returns from making changes for a new state
+- (void)locationSelectionVCPickupIsUnmoved:(LocationSelectionViewController *)viewController {
+    
+}
+
+- (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController {
+    
+}
+
+- (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController {
+    
+}
+
+- (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController {
+    
+}
+
+- (void)locationSelectionVCContactDispatch:(LocationSelectionViewController *)viewController {
     
 }
 
