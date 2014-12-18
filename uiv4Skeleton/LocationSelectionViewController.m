@@ -129,8 +129,8 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
-            [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateDraggedForDropoff];
+        if ([strongDelegate respondsToSelector:@selector(locationSelectionVCDropoffMoved:)]) {
+            [strongDelegate locationSelectionVCDropoffMoved:self];
         } else {
             // TODO - handle error
         }
@@ -170,8 +170,8 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ([strongDelegate respondsToSelector:@selector(locationSelectionVC:movedToNextState:)]) {
-            [strongDelegate locationSelectionVC:self movedToNextState:TNTMapViewControllerStateDraggedForDropoff];
+        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCPickupMoved:)] ) {
+            [strongDelegate locationSelectionVCPickupMoved:self];
         } else {
             // TODO - Handle error
         }

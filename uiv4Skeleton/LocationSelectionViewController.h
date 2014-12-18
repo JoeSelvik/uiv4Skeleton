@@ -24,6 +24,10 @@
 
 @protocol LocationSelectionViewControllerDelegate <NSObject>
 
-- (void)locationSelectionVC:(LocationSelectionViewController *)viewController movedToNextState:(TNTMapViewControllerState)state;
+- (void)locationSelectionVCPickupIsUnmoved:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionContactDispatch:(LocationSelectionViewController *)viewController;
 
 @end
