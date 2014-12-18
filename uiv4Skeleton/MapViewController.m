@@ -92,7 +92,7 @@
 
 // LocationSelectionVC returns from making changes for a new state
 - (void)locationSelectionVCPickupIsUnmoved:(LocationSelectionViewController *)viewController {
-    
+    // From tap on pickup bar
 }
 
 - (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController {
@@ -100,7 +100,7 @@
 }
 
 - (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController {
-    
+    // From tap on dropoff bar
 }
 
 - (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController {

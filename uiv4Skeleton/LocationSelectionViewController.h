@@ -24,10 +24,13 @@
 
 @protocol LocationSelectionViewControllerDelegate <NSObject>
 
-- (void)locationSelectionVCPickupIsUnmoved:(LocationSelectionViewController *)viewController;
-- (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController;
-- (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController;
-- (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController;
+// Change state from tapping bars
+- (void)locationSelectionVCMovedPickup:(LocationSelectionViewController *)viewController;
+- (void)locationSelectionVCMovedDropoff:(LocationSelectionViewController *)viewController;
+
+
+// Change state from pressing button
+- (void)locationSelectionVCUnmovedDropoff:(LocationSelectionViewController *)viewController;
 - (void)locationSelectionVCContactDispatch:(LocationSelectionViewController *)viewController;
 
 @end
