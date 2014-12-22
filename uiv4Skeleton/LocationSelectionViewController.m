@@ -68,26 +68,27 @@
     [self.locationButton setTitle:title forState:UIControlStateNormal];
 }
 
+
 // Put any functionality here that needs the right tapRecognizer
 - (void)tapRight:(UITapGestureRecognizer *)tapRecognizer
 {
-    [self animateToDragForDropoffState];
+    [self animateToDropoffBar];
 }
 
 // Put any functionality here that needs the left tapRecognizer
 - (void)tapLeft:(UITapGestureRecognizer *)tapRecognizer
 {
-    [self animateToDragForPickupState];
+    [self animateToPickupBar];
 }
 
 - (IBAction)handleLocationButton:(id)sender
 {
     // Learn it's own state, go to next state
-    // TODO - is this a valid approach?
+    // TODO - is this a valid approach? (learning state by reading button label)
     // TODO - logic to handle if it CAN move to next state
     //      - ie: User taps Pickup Location button but map has not calculated location yet
     if ([self.locationButton.titleLabel.text isEqualToString:@"Pickup Location"]) {
-        [self animateToDragForDropoffState];
+        [self animateToDropoffBar];
     } else if ([self.locationButton.titleLabel.text isEqualToString:@"Dropoff Location"]) {
         [self animateToContactingDispatchState];
     } else {
@@ -101,7 +102,7 @@
 #pragma mark - State Control
 
 // There are multiple ways to change from this state
-- (void)animateToDragForDropoffState
+- (void)animateToDropoffBar
 {
     if (self.pickupBarSelected) {
         // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
@@ -129,20 +130,19 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCDropoffMoved:)] ) {
-            [strongDelegate locationSelectionVCDropoffMoved:self];
+        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCMovedToDropoffBar:)] ) {
+            [strongDelegate locationSelectionVCMovedToDropoffBar:self];
         } else {
             // TODO - handle error
         }
         
-        // Protects against double taps.
         self.pickupBarSelected = NO;
     }
 }
 
 
 // There are multiple ways to change state though
-- (void)animateToDragForPickupState
+- (void)animateToPickupBar
 {
     if (!self.pickupBarSelected) {
         // The multiplier is readonly so to modify this constraint we need to replace it with a new, updated constraint.
@@ -170,13 +170,12 @@
         // Update the state.
         id<LocationSelectionViewControllerDelegate> strongDelegate = self.delegate;
         
-        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCPickupMoved:)] ) {
-            [strongDelegate locationSelectionVCPickupMoved:self];
+        if ( [strongDelegate respondsToSelector:@selector(locationSelectionVCMovedToPickupBar:)] ) {
+            [strongDelegate locationSelectionVCMovedToPickupBar:self];
         } else {
             // TODO - Handle error
         }
         
-        // Protects against double taps.
         self.pickupBarSelected = YES;
     }
 }

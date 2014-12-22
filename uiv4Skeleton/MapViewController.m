@@ -91,24 +91,26 @@
 }
 
 // LocationSelectionVC returns from making changes for a new state
-- (void)locationSelectionVCPickupIsUnmoved:(LocationSelectionViewController *)viewController {
-    // From tap on pickup bar
+- (void)locationSelectionVCMovedToPickupBar:(LocationSelectionViewController *)viewController
+{
+    self.state = TNTMapViewControllerStateMovedPickup;
+    [self didUpdateState];
 }
 
-- (void)locationSelectionVCPickupMoved:(LocationSelectionViewController *)viewController {
+- (void)locationSelectionVCMovedToDropoffBar:(LocationSelectionViewController *)viewController
+{
+    self.state = TNTMapViewControllerStateMovedDropoff;
+    [self didUpdateState];
+}
+
+- (void)locationSelectionVCUnmovedDropoff:(LocationSelectionViewController *)viewController
+{
     
 }
 
-- (void)locationSelectionVCDropoffIsUnmoved:(LocationSelectionViewController *)viewController {
-    // From tap on dropoff bar
-}
-
-- (void)locationSelectionVCDropoffMoved:(LocationSelectionViewController *)viewController {
-    
-}
-
-- (void)locationSelectionVCContactDispatch:(LocationSelectionViewController *)viewController {
-    
+- (void)locationSelectionVCContactDispatch:(LocationSelectionViewController *)viewController
+{
+    NSLog(@"Go to Contacting Dispatch!");
 }
 
 
