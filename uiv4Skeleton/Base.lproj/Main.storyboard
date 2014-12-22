@@ -1,141 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LIh-iF-JIe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LIh-iF-JIe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--mapVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-ht-DSe" userLabel="locationButton">
-                                <rect key="frame" x="0.0" y="500" width="600" height="100"/>
-                                <color key="backgroundColor" red="0.47843137250000001" green="0.066666666669999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="2cQ-7X-nUH"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tappedLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0z-oV-VN6"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-e4-vGD" userLabel="locationBarView">
-                                <rect key="frame" x="0.0" y="420" width="600" height="80"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-Fs-ZyP" userLabel="pickupBarView">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldShield" translatesAutoresizingMaskIntoConstraints="NO" id="m6B-DG-Ifj">
-                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="HiB-9O-s0Z"/>
-                                                    <constraint firstAttribute="width" constant="40" id="zCU-kg-Wwa"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvY-TJ-N66">
-                                                <rect key="frame" x="68" y="20" width="272" height="40"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="AYr-nA-9nz"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.23520680520000001" green="1" blue="0.1598241436" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="GvY-TJ-N66" secondAttribute="trailing" constant="20" symbolic="YES" id="dZ2-OJ-AF7"/>
-                                            <constraint firstItem="m6B-DG-Ifj" firstAttribute="leading" secondItem="sEX-Fs-ZyP" secondAttribute="leading" constant="20" symbolic="YES" id="kD4-pp-Nld"/>
-                                            <constraint firstItem="GvY-TJ-N66" firstAttribute="top" secondItem="sEX-Fs-ZyP" secondAttribute="top" constant="20" symbolic="YES" id="r0r-wC-u1Y"/>
-                                            <constraint firstItem="m6B-DG-Ifj" firstAttribute="top" secondItem="sEX-Fs-ZyP" secondAttribute="top" constant="20" symbolic="YES" id="t0Y-XJ-yN4"/>
-                                            <constraint firstItem="GvY-TJ-N66" firstAttribute="leading" secondItem="m6B-DG-Ifj" secondAttribute="trailing" constant="8" symbolic="YES" id="wdN-s2-HCI"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ntd-Ti-SHm" userLabel="dropoffBarView">
-                                        <rect key="frame" x="360" y="0.0" width="240" height="80"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maroonShield" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-Xp-Oat">
-                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="4CR-Nq-A1R"/>
-                                                    <constraint firstAttribute="height" constant="40" id="OBc-mM-ClK"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ps-wb-f2d">
-                                                <rect key="frame" x="68" y="20" width="152" height="40"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="brv-IF-vuj"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6ps-wb-f2d" secondAttribute="trailing" constant="20" symbolic="YES" id="cmB-oO-Otg"/>
-                                            <constraint firstItem="6kT-Xp-Oat" firstAttribute="top" secondItem="Ntd-Ti-SHm" secondAttribute="top" constant="20" symbolic="YES" id="jUM-Sr-bTV"/>
-                                            <constraint firstItem="6kT-Xp-Oat" firstAttribute="leading" secondItem="Ntd-Ti-SHm" secondAttribute="leading" constant="20" symbolic="YES" id="kv3-Yq-Scp"/>
-                                            <constraint firstItem="6ps-wb-f2d" firstAttribute="leading" secondItem="6kT-Xp-Oat" secondAttribute="trailing" constant="8" symbolic="YES" id="t2r-Xp-lOW"/>
-                                            <constraint firstItem="6ps-wb-f2d" firstAttribute="top" secondItem="Ntd-Ti-SHm" secondAttribute="top" constant="20" symbolic="YES" id="xMX-u8-j9H"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="95c-l6-MkD"/>
-                                    <constraint firstItem="sEX-Fs-ZyP" firstAttribute="trailing" secondItem="A1l-e4-vGD" secondAttribute="centerX" multiplier="1.2" id="9qh-sM-eTB"/>
-                                    <constraint firstAttribute="bottom" secondItem="sEX-Fs-ZyP" secondAttribute="bottom" id="K8Q-6K-zfx"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ntd-Ti-SHm" secondAttribute="trailing" id="Mlq-zJ-yBO"/>
-                                    <constraint firstItem="Ntd-Ti-SHm" firstAttribute="leading" secondItem="sEX-Fs-ZyP" secondAttribute="trailing" id="bd6-8z-fUK"/>
-                                    <constraint firstItem="sEX-Fs-ZyP" firstAttribute="leading" secondItem="A1l-e4-vGD" secondAttribute="leading" id="cg0-ml-3BA"/>
-                                    <constraint firstItem="sEX-Fs-ZyP" firstAttribute="top" secondItem="A1l-e4-vGD" secondAttribute="top" id="hGM-aU-evR"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ntd-Ti-SHm" secondAttribute="bottom" id="mMX-b3-LfU"/>
-                                    <constraint firstItem="Ntd-Ti-SHm" firstAttribute="top" secondItem="A1l-e4-vGD" secondAttribute="top" id="qwA-40-mBF"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uXV-ht-DSe" secondAttribute="bottom" id="Jqo-XW-zgg"/>
-                            <constraint firstAttribute="trailing" secondItem="uXV-ht-DSe" secondAttribute="trailing" id="Szf-Uj-RCt"/>
-                            <constraint firstItem="A1l-e4-vGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TBy-nQ-T0V"/>
-                            <constraint firstItem="uXV-ht-DSe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XJk-AU-3Pg"/>
-                            <constraint firstItem="uXV-ht-DSe" firstAttribute="top" secondItem="A1l-e4-vGD" secondAttribute="bottom" id="noY-sd-BYx"/>
-                            <constraint firstAttribute="trailing" secondItem="A1l-e4-vGD" secondAttribute="trailing" id="zKH-cY-z37"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="mapVC" id="zTr-Sg-Ev3"/>
-                    <connections>
-                        <outlet property="dropoffBarLabel" destination="6ps-wb-f2d" id="gGA-hv-hAs"/>
-                        <outlet property="dropoffBarView" destination="Ntd-Ti-SHm" id="kpX-Y5-kUK"/>
-                        <outlet property="locationBarSlideConstraint" destination="9qh-sM-eTB" id="G6Q-PJ-n7h"/>
-                        <outlet property="locationBarView" destination="A1l-e4-vGD" id="fAI-hT-xQ3"/>
-                        <outlet property="locationButton" destination="uXV-ht-DSe" id="D9c-Mk-bhz"/>
-                        <outlet property="pickupBarLabel" destination="GvY-TJ-N66" id="vfd-qp-hY1"/>
-                        <outlet property="pickupBarView" destination="sEX-Fs-ZyP" id="5Gg-8r-RUO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="458" y="1256"/>
-        </scene>
         <!--Map VC-->
         <scene sceneID="oJh-lB-bdJ">
             <objects>
@@ -234,24 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXz-RS-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1233" y="1613"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="itZ-hF-RPD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N4I-t3-cf3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WPi-cR-rHa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="L7o-Me-iHb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vU6-At-9EP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-377" y="1256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tvz-di-W3f">

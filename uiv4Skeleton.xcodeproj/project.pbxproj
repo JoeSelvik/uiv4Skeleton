@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		885F13651A1D8FC300E8F081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F13641A1D8FC300E8F081 /* main.m */; };
 		885F13681A1D8FC300E8F081 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F13671A1D8FC300E8F081 /* AppDelegate.m */; };
-		885F136B1A1D8FC300E8F081 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F136A1A1D8FC300E8F081 /* ViewController.m */; };
 		885F136E1A1D8FC300E8F081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885F136C1A1D8FC300E8F081 /* Main.storyboard */; };
 		885F13701A1D8FC300E8F081 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F136F1A1D8FC300E8F081 /* Images.xcassets */; };
 		885F13731A1D8FC300E8F081 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885F13711A1D8FC300E8F081 /* LaunchScreen.xib */; };
@@ -30,14 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		880F120C1A3978C800A8C37A /* baltoStateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baltoStateProtocol.h; sourceTree = "<group>"; };
 		885F135F1A1D8FC300E8F081 /* uiv4Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uiv4Skeleton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885F13631A1D8FC300E8F081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885F13641A1D8FC300E8F081 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		885F13661A1D8FC300E8F081 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		885F13671A1D8FC300E8F081 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		885F13691A1D8FC300E8F081 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		885F136A1A1D8FC300E8F081 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		885F136D1A1D8FC300E8F081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		885F136F1A1D8FC300E8F081 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		885F13721A1D8FC300E8F081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,12 +89,9 @@
 			children = (
 				885F13661A1D8FC300E8F081 /* AppDelegate.h */,
 				885F13671A1D8FC300E8F081 /* AppDelegate.m */,
-				885F13691A1D8FC300E8F081 /* ViewController.h */,
-				885F136A1A1D8FC300E8F081 /* ViewController.m */,
 				885F136C1A1D8FC300E8F081 /* Main.storyboard */,
 				887B2FC11A2C2F0700F19196 /* LocationBarViewController.h */,
 				887B2FC21A2C2F0700F19196 /* LocationBarViewController.m */,
-				880F120C1A3978C800A8C37A /* baltoStateProtocol.h */,
 				887B2FBE1A2C2D2400F19196 /* MapViewController.h */,
 				887B2FBF1A2C2D2400F19196 /* MapViewController.m */,
 				887B2FF91A2D8CC900F19196 /* LocationSelectionViewController.h */,
@@ -236,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885F136B1A1D8FC300E8F081 /* ViewController.m in Sources */,
 				885F13681A1D8FC300E8F081 /* AppDelegate.m in Sources */,
 				887B2FC31A2C2F0700F19196 /* LocationBarViewController.m in Sources */,
 				885F13651A1D8FC300E8F081 /* main.m in Sources */,
