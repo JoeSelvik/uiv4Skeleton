@@ -31,11 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Set our initial state. For demo skip the drag state
-    self.state = TNTMapViewControllerStateMovedPickup;
-    [self didUpdateState];
-
     [self loadBottomContainer];
+    
+    // Set our initial state. For demo skip the drag state
+    self.state = TNTMapViewControllerStateUnmovedPickup;
+    [self didUpdateState];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +79,7 @@
         }
             
         case TNTMapViewControllerStateMovedDropoff: {
-            [self.locationSelectionVC disableButton];
+            [self.locationSelectionVC enableButton];
             [self.locationSelectionVC setButtonTitle:@"Dropoff Location"];
             break;
         }
