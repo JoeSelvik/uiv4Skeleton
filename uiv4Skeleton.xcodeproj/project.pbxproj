@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		885F13651A1D8FC300E8F081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F13641A1D8FC300E8F081 /* main.m */; };
 		885F13681A1D8FC300E8F081 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F13671A1D8FC300E8F081 /* AppDelegate.m */; };
-		885F136B1A1D8FC300E8F081 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F136A1A1D8FC300E8F081 /* ViewController.m */; };
 		885F136E1A1D8FC300E8F081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885F136C1A1D8FC300E8F081 /* Main.storyboard */; };
 		885F13701A1D8FC300E8F081 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F136F1A1D8FC300E8F081 /* Images.xcassets */; };
 		885F13731A1D8FC300E8F081 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885F13711A1D8FC300E8F081 /* LaunchScreen.xib */; };
 		885F137F1A1D8FC300E8F081 /* uiv4SkeletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F137E1A1D8FC300E8F081 /* uiv4SkeletonTests.m */; };
+		887B2FC01A2C2D2400F19196 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887B2FBF1A2C2D2400F19196 /* MapViewController.m */; };
+		887B2FC31A2C2F0700F19196 /* LocationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887B2FC21A2C2F0700F19196 /* LocationBarViewController.m */; };
+		887B2FFB1A2D8CC900F19196 /* LocationSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887B2FFA1A2D8CC900F19196 /* LocationSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		885F13641A1D8FC300E8F081 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		885F13661A1D8FC300E8F081 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		885F13671A1D8FC300E8F081 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		885F13691A1D8FC300E8F081 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		885F136A1A1D8FC300E8F081 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		885F136D1A1D8FC300E8F081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		885F136F1A1D8FC300E8F081 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		885F13721A1D8FC300E8F081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		885F13781A1D8FC300E8F081 /* uiv4SkeletonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiv4SkeletonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		885F137D1A1D8FC300E8F081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885F137E1A1D8FC300E8F081 /* uiv4SkeletonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uiv4SkeletonTests.m; sourceTree = "<group>"; };
+		887B2FBE1A2C2D2400F19196 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		887B2FBF1A2C2D2400F19196 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		887B2FC11A2C2F0700F19196 /* LocationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBarViewController.h; sourceTree = "<group>"; };
+		887B2FC21A2C2F0700F19196 /* LocationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBarViewController.m; sourceTree = "<group>"; };
+		887B2FF91A2D8CC900F19196 /* LocationSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSelectionViewController.h; sourceTree = "<group>"; };
+		887B2FFA1A2D8CC900F19196 /* LocationSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSelectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,12 @@
 				885F13661A1D8FC300E8F081 /* AppDelegate.h */,
 				885F13671A1D8FC300E8F081 /* AppDelegate.m */,
 				885F136C1A1D8FC300E8F081 /* Main.storyboard */,
-				885F13691A1D8FC300E8F081 /* ViewController.h */,
-				885F136A1A1D8FC300E8F081 /* ViewController.m */,
+				887B2FC11A2C2F0700F19196 /* LocationBarViewController.h */,
+				887B2FC21A2C2F0700F19196 /* LocationBarViewController.m */,
+				887B2FBE1A2C2D2400F19196 /* MapViewController.h */,
+				887B2FBF1A2C2D2400F19196 /* MapViewController.m */,
+				887B2FF91A2D8CC900F19196 /* LocationSelectionViewController.h */,
+				887B2FFA1A2D8CC900F19196 /* LocationSelectionViewController.m */,
 				885F136F1A1D8FC300E8F081 /* Images.xcassets */,
 				885F13711A1D8FC300E8F081 /* LaunchScreen.xib */,
 				885F13621A1D8FC300E8F081 /* Supporting Files */,
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885F136B1A1D8FC300E8F081 /* ViewController.m in Sources */,
 				885F13681A1D8FC300E8F081 /* AppDelegate.m in Sources */,
+				887B2FC31A2C2F0700F19196 /* LocationBarViewController.m in Sources */,
 				885F13651A1D8FC300E8F081 /* main.m in Sources */,
+				887B2FFB1A2D8CC900F19196 /* LocationSelectionViewController.m in Sources */,
+				887B2FC01A2C2D2400F19196 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
