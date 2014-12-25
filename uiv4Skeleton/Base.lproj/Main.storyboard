@@ -55,10 +55,10 @@
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
                     <connections>
                         <outlet property="bottomContainer" destination="mjJ-AA-j4c" id="fFg-9D-Eiw"/>
-                        <outlet property="bottomContainerHeightConstraint" destination="Jxj-K0-KMz" id="oxz-TZ-Ftx"/>
+                        <outlet property="bottomContainerHeightConstraint" destination="uoD-Fg-DAk" id="8Hg-Vu-aCo"/>
                         <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
                         <outlet property="topContainer" destination="iX8-ha-lJs" id="5yM-sv-Ym2"/>
-                        <outlet property="topContainerHeightConstraint" destination="Xb8-hu-9g5" id="uDj-88-a0c"/>
+                        <outlet property="topContainerHeightConstraint" destination="guk-6O-95A" id="abn-a6-vMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>

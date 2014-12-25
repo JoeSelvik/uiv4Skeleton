@@ -121,17 +121,18 @@
 {
     NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
     
-    
-    
-    self.topContainerHeightConstraint.constant = 100;
-    [UIView animateWithDuration:0.5
+    self.topContainerHeightConstraint.constant = 0;
+    [UIView animateWithDuration:2.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         [self.topContainer layoutIfNeeded];
-                         [self.mapContainer layoutIfNeeded];
+//                         [self.topContainer layoutIfNeeded];
+//                         [self.mapContainer layoutIfNeeded];
+                         [self.view layoutIfNeeded];
                      }
-                     completion:nil
+                     completion:^(BOOL finished){
+                         NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+                     }
      ];
     
     
