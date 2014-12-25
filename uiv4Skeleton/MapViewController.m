@@ -22,6 +22,10 @@
 
 @property (weak, nonatomic) LocationSelectionViewController *locationSelectionVC;
 
+- (IBAction)mapButton:(id)sender;
+
+
+
 - (void)didUpdateState;
 
 @end
@@ -31,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadInitialTopContainer];
+//    [self loadInitialTopContainer];
     [self loadInitialBottomContainer];
     
     // Set our initial state. For demo skip the drag state
@@ -55,6 +59,25 @@
 - (void) setMapVCState:(TNTMapViewControllerState)state
 {
     self.state = state;
+}
+
+- (IBAction)mapButton:(id)sender
+{
+    NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+    
+    self.topContainerHeightConstraint.constant = 0;
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         //                         [self.topContainer layoutIfNeeded];
+                         //                         [self.mapContainer layoutIfNeeded];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+                     }
+     ];
 }
 
 - (void)didUpdateState
@@ -134,8 +157,6 @@
                          NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
                      }
      ];
-    
-    
 }
 
 - (void)loadInitialBottomContainer
