@@ -22,6 +22,10 @@
 
 @property (weak, nonatomic) LocationSelectionViewController *locationSelectionVC;
 
+- (IBAction)mapButton:(id)sender;
+
+
+
 - (void)didUpdateState;
 
 @end
@@ -31,7 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadBottomContainer];
+//    [self loadInitialTopContainer];
+    [self loadInitialBottomContainer];
     
     // Set our initial state. For demo skip the drag state
     self.state = TNTMapViewControllerStateUnmovedPickup;
@@ -54,6 +59,25 @@
 - (void) setMapVCState:(TNTMapViewControllerState)state
 {
     self.state = state;
+}
+
+- (IBAction)mapButton:(id)sender
+{
+    NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+    
+    self.topContainerHeightConstraint.constant = 0;
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         //                         [self.topContainer layoutIfNeeded];
+                         //                         [self.mapContainer layoutIfNeeded];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+                     }
+     ];
 }
 
 - (void)didUpdateState
@@ -116,12 +140,26 @@
 
 #pragma mark - Containers
 
-- (void)loadTopContainer
+- (void)loadInitialTopContainer
 {
+    NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
     
+    self.topContainerHeightConstraint.constant = 0;
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+//                         [self.topContainer layoutIfNeeded];
+//                         [self.mapContainer layoutIfNeeded];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"top height constraint: %f", self.topContainerHeightConstraint.constant);
+                     }
+     ];
 }
 
-- (void)loadBottomContainer
+- (void)loadInitialBottomContainer
 {
     // Grab the locationSelectionVC from the SB and set it up
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -164,7 +202,8 @@
                                                                            views:viewsDictionary];
     [self.bottomContainer addConstraints:constraint_BOTTOM];
     
-    // Needed to finish the setup?
+    
+    // Needed to finish the setup
     [locationSelectionVC didMoveToParentViewController:self];
     
     // Create a pointer to this VC for future use

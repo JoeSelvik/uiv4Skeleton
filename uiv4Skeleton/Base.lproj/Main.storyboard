@@ -28,7 +28,28 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-Y6-Enp" userLabel="map container">
                                 <rect key="frame" x="0.0" y="164" width="600" height="272"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhA-12-BnX">
+                                        <rect key="frame" x="250" y="85.5" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.47843137250000001" green="0.066666666669999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="fVw-bW-wit"/>
+                                            <constraint firstAttribute="height" constant="100" id="fbz-Lb-Wfv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="0.80392156859999997" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mapButton:" destination="zk7-4V-4ih" eventType="touchUpInside" id="PZX-Ss-aUs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="fhA-12-BnX" secondAttribute="centerY" id="Dbs-Fr-yQ8"/>
+                                    <constraint firstAttribute="centerX" secondItem="fhA-12-BnX" secondAttribute="centerX" id="Gto-kA-Pd2"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-AA-j4c" userLabel="bottomContainerView">
                                 <rect key="frame" x="0.0" y="436" width="600" height="164"/>
@@ -55,10 +76,10 @@
                     <navigationItem key="navigationItem" title="Map VC" id="QHt-V4-pAw"/>
                     <connections>
                         <outlet property="bottomContainer" destination="mjJ-AA-j4c" id="fFg-9D-Eiw"/>
-                        <outlet property="bottomContainerHeightConstraint" destination="Jxj-K0-KMz" id="oxz-TZ-Ftx"/>
+                        <outlet property="bottomContainerHeightConstraint" destination="uoD-Fg-DAk" id="8Hg-Vu-aCo"/>
                         <outlet property="mapContainer" destination="uZG-Y6-Enp" id="tac-Jo-fFx"/>
                         <outlet property="topContainer" destination="iX8-ha-lJs" id="5yM-sv-Ym2"/>
-                        <outlet property="topContainerHeightConstraint" destination="Xb8-hu-9g5" id="uDj-88-a0c"/>
+                        <outlet property="topContainerHeightConstraint" destination="guk-6O-95A" id="abn-a6-vMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwI-Yw-EeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
